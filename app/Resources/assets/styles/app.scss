@@ -1,0 +1,24 @@
+/**
+ * App main file
+ */
+
+/**
+ * global vars
+ */
+ 
+ 
+
+/**
+* Colors
+*/
+$c-white : #fff;
+$c-black : #000;
+
+
+/**
+ * imports
+ */
+@import 'vendors/_normalize.scss';
+@import '_bootstrap.scss';
+@import '_helpers.scss';
+@import '_styles.scss';
