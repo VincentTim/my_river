@@ -1,0 +1,19 @@
+liip_imagine:
+    filter_sets:
+        cache: ~
+        my_thumb:
+            quality: 75
+            filters:
+                relative_resize: { heighten: 80 }
+        item_list:
+            quality: 75
+            filters:
+                relative_resize: { heighten: 300 }
+        item_detail:
+            quality: 90
+            filters:
+                relative_resize: { heighten: 600 }
+        avatar_list:
+            quality: 75
+            filters:
+                relative_resize: { heighten: 40 }

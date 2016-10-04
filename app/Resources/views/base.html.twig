@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+		<script type="text/javascript" src="{{ asset('dist/scripts/bundle.js') }}" ></script>
+		<link rel="stylesheet" type="text/css" href="{{ asset('dist/styles/app.css') }}"> 
+    </head>
+    <body>
+        <aside id="menu-wrapper">
+            <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/instagram"><i class="fa fa-instagram" aria-hidden="true"></i> <span class="sr-only">Example of </span>instagram</a></div>
+        </aside>
+        <div id="main-wrapper">
+            {% include 'embed/header.html.twig' %}
+            <div class="container">
+                {% block body %}{% endblock %}
+            </div>
+            {% block javascripts %}{% endblock %}
+        </div>
+    </body>
+</html>

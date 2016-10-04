@@ -1,0 +1,34 @@
+.login {
+	
+	h1 {
+		font-family: 'pacificoregular';
+		display: block;
+		font-size: 122px;
+		margin: 50px auto;
+		color: white;
+		padding: 0 15px 0 15px;
+		width: 350px;
+		text-align: center;
+	}
+
+	.login-form {
+		width:250px;
+		padding:15px;
+		margin:50px auto;
+
+		.form-group {
+			label {
+				color:$c-white;
+			}
+		}
+
+		.checkbox label {
+				color:$c-white;
+			}
+
+	}
+
+}
+
+
+

@@ -1,0 +1,142 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<header></header>
+	<section class="dashboard--wrapper container-fluid">
+	<nav class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+		<ul>
+			<li><a href="#" class="nav__btn"><span class="glyphicon glyphicon-globe"></span></a></li>
+			<li><a href="#" class="nav__btn"><span class="glyphicon glyphicon-send"></span></a></li>
+			<li><a href="#" class="nav__btn"><span class="glyphicon glyphicon-map-marker"></span></a></li>
+			<li><a href="#" class="nav__btn"><span class="glyphicon glyphicon-user"></span></a></li>
+			<li><a href="{{path('dashboard') }}" class="nav__btn"><span class="glyphicon glyphicon-plus"></span></a></li>
+			<li><a href="{{path('fos_user_security_logout')}}" class="nav__btn"><span class="glyphicon glyphicon-off"></span></a></li>
+		</ul>
+	</nav>
+    <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
+        <div class="row">
+            {{dashboard_count_block_render('green', 'globe', '1254', 'unique users')}}
+            {{dashboard_count_block_render('cherry', 'map-marker', '1254', 'unique users')}}
+            {{dashboard_count_block_render('mint', 'user', '1254', 'unique users')}}
+            {{dashboard_count_block_render('lime', 'send', '+20%', 'incoming traffic')}}
+        </div>   
+        <div class="row">    
+            {{dashboard_message_block_render()}}
+        </div>
+    </div>
+    
+	
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+	
+	<div class="places__wrapper col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="places__item">
+			<div class="item__image"><img src="{{ 'images/bg-breme.jpg' | imagine_filter('item_list') }}" /></div>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+	
+	<!--<div class="places__wrapper col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<div class="places__item">
+			<div class="item__date">
+				<div class="item__date__first">13-05</div>
+				<div class="item__date__year">2015</div>
+			</div>
+			<div class="item__image"><img src="{{ 'images/bg-breme.jpg' | imagine_filter('item_list') }}" /></div>
+		</div>
+	</div>
+	<div class="places__wrapper col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		
+	</div>
+	
+	<div class="places__wrapper col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		<div class="places__item">
+			<div class="item__date">
+				<div class="item__date__first">13-05</div>
+				<div class="item__date__year">2015</div>
+			</div>
+			<div class="item__image"><img src="http://dl.dropbox.com/u/515046/www/garfield-interior.jpg" alt="" title="" /></div>
+		</div>
+	</div>
+	
+	<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12"></div>
+	<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12"></div>
+	
+	<div class="row">
+						<div class="col-md-8 col-sm-12 col-xs-12">
+							<div class="banner-home3">
+								<div style="opacity: 1; display: block;" class="wrap-item owl-carousel owl-theme">
+									<div class="owl-wrapper-outer"><div style="width: 4680px; left: 0px; display: block;" class="owl-wrapper"><div style="width: 780px;" class="owl-item"><div class="item-banner3">
+										<div class="banner-thumb">
+											<a href="#"><img src="images/home3/slide1.jpg" alt=""></a>
+										</div>
+										<div class="banner-info">
+											<h2><a href="#">MOD ATRAS VULPUTATE ILTRICIES ETRI ELIT</a></h2>
+											<a href="#" class="cat-parent">business - beauty</a>
+										</div>
+									</div></div><div style="width: 780px;" class="owl-item"><div class="item-banner3">
+										<div class="banner-thumb">
+											<a href="#"><img src="images/home3/slide2.jpg" alt=""></a>
+										</div>
+										<div class="banner-info">
+											<h2><a href="#">MOD ATRAS VULPUTATE ILTRICIES ETRI ELIT</a></h2>
+											<a href="#" class="cat-parent">business - beauty</a>
+										</div>
+									</div></div><div style="width: 780px;" class="owl-item"><div class="item-banner3">
+										<div class="banner-thumb">
+											<a href="#"><img src="images/home3/slide3.jpg" alt=""></a>
+										</div>
+										<div class="banner-info">
+											<h2><a href="#">MOD ATRAS VULPUTATE ILTRICIES ETRI ELIT</a></h2>
+											<a href="#" class="cat-parent">business - beauty</a>
+										</div>
+									</div></div></div></div>
+									
+									
+								<div class="owl-controls clickable"><div class="owl-buttons"><div class="owl-prev"><i class="fa fa-angle-left"></i> prev</div><div class="owl-next">next <i class="fa fa-angle-right"></i></div></div></div></div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-12 col-xs-12">
+							<div class="featured-post3">
+								<div class="row">
+									<div class="col-md-12 col-sm-6 col-xs-12">
+										<div class="post-item3">
+											<div class="post-thumb">
+												<a href="#"><img src="images/home3/post1.jpg" alt=""></a>
+											</div>
+											<div class="post-info">
+												<h3><a href="#">YOU CAN NEVER GET TO KNOW</a></h3>
+												<a href="#" class="cat-parent">business - beauty</a>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12 col-sm-6 col-xs-12">
+										<div class="post-item3">
+											<div class="post-thumb">
+												<a href="#"><img src="images/home3/post2.jpg" alt=""></a>
+											</div>
+											<div class="post-info">
+												<h3><a href="#">ANYONE OR BECOME FRIENDLY WITH THEM Quisque ligulas</a></h3>
+												<a href="#" class="cat-parent">business - beauty</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>-->
+	
+	</section>
+	<div class="mdl-progress"><div class="bar bar1"></div><div class="bar bar2"></div><div class="bar bar3"></div></div>
+
+	<aside class="sidebar">
+		<div id="facebook">
+		  <div class="bar"></div>
+		  <div class="bar"></div>
+		  <div class="bar"></div>
+		</div>
+	</aside>
+	<footer></footer>
+	
+{% endblock %}

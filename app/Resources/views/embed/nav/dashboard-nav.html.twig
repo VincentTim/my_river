@@ -1,0 +1,27 @@
+<nav id="dashboard-nav">
+        <ul>
+            
+			{% include 'embed/nav/dashboard/link.html.twig' with { path: 'dashboard', label: 'Dashboard', icon: 'dashboard' } %}
+            
+			
+	        <li>
+                
+                <a href="#" class="dropdown-btn"><span class="glyphicon glyphicon-picture"></span>Illustrations</a>
+                <ul class="drop-menu">
+                    <li><a href="{{ path('dashboard_illustration')}}"><span class="glyphicon glyphicon-th-list"></span>Liste</a></li>
+                    <li><a href="{{ path('dashboard_illustration_add')}}"><span class="glyphicon glyphicon-plus"></span>Ajouter</a></li>
+                </ul>
+            </li>
+            <!--<li>
+                <a href="#"><span class="glyphicon glyphicon-map-marker"></span>Lieux</a>
+            </li>
+            <li>
+                <a href="#"><span class="glyphicon glyphicon-comment"></span>Messages</a>
+            </li>
+        
+            <li>
+                <a href="#" class="dropdown"><span class="glyphicon glyphicon-user"></span>Mon profil</a>
+            </li>-->
+            {% include 'embed/nav/dashboard/link.html.twig' with { path: 'fos_user_security_logout', label: 'Déconnexion', icon: 'off' } %}
+        </ul>
+    </nav>
