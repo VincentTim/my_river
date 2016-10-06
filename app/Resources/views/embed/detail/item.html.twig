@@ -1,26 +1,77 @@
 <section class="col-lg-9 detail">
     <header>
-        <span class="category"></span>
+        <span class="category">{{ post.category.name }}</span>
         <h1>{{ post.title }}</h1>
         <span class="published">{{ post.modification|localizeddate('long', 'none') }}</span>
     </header>
     <article>
-        {% if post.files|length > 0 and post.files|length < 2 %}
+        {% if post.files|length > 0  %}
             {% for image in post.files %}
                 {% set path = '/upload/media/' ~image.name %}
                 <img src="{{ path | imagine_filter('item_detail') }}">
             {% endfor %}
         {% endif %}
-        {{ post.description|raw }}
+
     </article>
-    {% if post.tags|length > 0 %}
-        <ul id="tags-wrapper">
-            {% for tag in post.tags %}
-                <li>{{ tag.name }}</li>
+
+</section>
+<aside id="detail-aside" class="col-lg-3">
+    <div class="part-aside">
+        <h4>à propos</h4>
+        {{ post.description|raw }}
+    </div>
+    <div class="part-aside">
+        {% if cats|length > 0 %}
+            <h4>Catégories</h4>
+            <ul id="cats-wrapper">
+                {% for cat in cats %}
+                    <li><a>{{ cat.name }}</a> </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <div class="part-aside">
+        <h4>Les plus vus</h4>
+        <ul id="cats-wrapper">
+
+            {% for random in most %}
+                <li><a href="{{ path('post_detail', {
+                        category: random.category.name|seo,
+                        year: random.modification|date('Y'),
+                        month:random.modification|date('m'),
+                        day: random.modification|date('d'),
+                        title: random.title|seo
+                    })
+                    }}" title="">{{ random.title }}</a> </li>
             {% endfor %}
         </ul>
-    {% endif %}
-</section>
-<aside class="col-lg-3">
-
+    </div>
+    <div class="part-aside">
+        <h4>à voir</h4>
+        {% if random.files|length > 0  %}
+            {% for image in random.files %}
+                {% set path = '/upload/media/' ~image.name %}
+                <a href="{{ path('post_detail', {
+                            category: random.category.name|seo,
+                            year: random.modification|date('Y'),
+                            month:random.modification|date('m'),
+                            day: random.modification|date('d'),
+                            title: random.title|seo
+                            })
+                }}" title="">
+                    <img src="{{ path | imagine_filter('item_detail') }}">
+                </a>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="part-aside">
+        {% if tags|length > 0 %}
+            <h4>Tags</h4>
+            <ul id="tags-wrapper">
+                {% for tag in tags %}
+                    <li><a href="#">{{ tag.name }} {{ tag.1 }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
 </aside>

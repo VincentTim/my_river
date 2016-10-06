@@ -10,7 +10,28 @@
     </head>
     <body>
         <aside id="menu-wrapper">
-            <div class="fa-hover col-md-3 col-sm-4"><a href="../icon/instagram"><i class="fa fa-instagram" aria-hidden="true"></i> <span class="sr-only">Example of </span>instagram</a></div>
+            <ul>
+                <li>
+                    <a href="{{ path('homepage') }}">
+                        Accueil
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('view_category', { category: 'illustration'}) }}">
+                        Illustrations
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('view_category', { category: 'photographie'}) }}">
+                        Photographies
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('homepage') }}">
+                        Collections
+                    </a>
+                </li>
+            </ul>
         </aside>
         <div id="main-wrapper">
             {% include 'embed/header.html.twig' %}

@@ -35,8 +35,9 @@ class DashboardController extends Controller
      */
     public function indexAction()
     {
-        $posts = $this->get('entity.management')->rep('Post')->findAll();
-        return $this->render('admin/main.html.twig', array('posts'=>$posts));
+        $posts = $this->get('entity.management')->rep('Post')->findBy(array('category'=> 2));
+        $ill = $this->get('entity.management')->rep('Post')->findBy(array('category'=> 1));
+        return $this->render('admin/main.html.twig', array('photos'=>$posts, 'ill'=>$ill));
     }
     
     /**

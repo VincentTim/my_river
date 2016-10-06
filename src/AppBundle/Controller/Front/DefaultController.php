@@ -27,6 +27,21 @@ class DefaultController extends Controller
             'posts' => $posts
         ));
     }
+    
+    /**
+     * @Route("/categories/{category}", name="view_category")
+     */
+    public function categoryAction($category){
+        $iDcategory = $this->get('entity.management')->rep('Category')->findOneBy(array('name'=>$category));
+        $posts = $this->get('entity.management')->rep('Post')->findBy(
+            array('category'=>$iDcategory->getId()), 
+            array('modification' => 'DESC')
+        ); 
+        return $this->render('default/index.html.twig', array(
+            'posts' => $posts
+        ));
+        
+    }
 
     /**
      * @Route("/post/{category}/{year}/{month}/{day}/{title}", name="post_detail")
@@ -35,14 +50,26 @@ class DefaultController extends Controller
         
         $iDcategory = $this->get('entity.management')->rep('Category')->findOneBy(array('name'=>$category));
         $post = $this->get('entity.management')->rep('Post')->findOneBy(array('category'=>$iDcategory->getId(), 'slug' => $title));
-        
+
+        $tags = $this->get('entity.management')->rep('Tag')->getTagCount();
+        $cats = $this->get('entity.management')->rep('Category')->findAll();
+
+        $random = $this->randomPost($post->getId());
+        $most = $this->mostView();
         $this->countUpdate($post);
         
         return $this->render('default/detail.html.twig', array(
-            'post' => $post
+            'post' => $post,
+            'tags' => $tags,
+            'cats' => $cats,
+            'random' => $random,
+            'most' => $most
         ));
     }
-    
+
+    /**
+     * @param $post
+     */
     public function countUpdate($post){
           
         $request = new Request();
@@ -61,5 +88,41 @@ class DefaultController extends Controller
         }
         
     }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function randomPost($id){
+        $posts = $this->get('entity.management')->rep('Post')->findAll();
+
+        $arrayPost =  array();
+
+        foreach($posts as $index => $post){
+            $arrayPost[$index] = $post->getId();
+        }
+
+        $index = array_rand ( $arrayPost );
+
+        $interval = $arrayPost[$index];
+
+        if($interval == $id){
+            $index == end($arrayPost);
+            $random = $this->get('entity.management')->rep('Post')->find(prev($arrayPost));
+        } else {
+            $random = $this->get('entity.management')->rep('Post')->find($arrayPost[$index]);
+        }
+
+        return $random;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function mostView(){
+        $most = $this->get('entity.management')->rep('Post')->getMostViewed();
+        return $most;
+    }
+
     
 }

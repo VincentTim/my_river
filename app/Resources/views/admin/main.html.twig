@@ -2,6 +2,22 @@
 
 {% block dashboard_content %}
 <div class="row">
+    {% include ':embed:block/block-sign.html.twig' with { 
+        class : 'green', 
+        icon : 'picture',
+        label : 'illustrations', 
+        count : ill|length, 
+        color : 'light'
+    }
+    %}
+    {% include ':embed:block/block-sign.html.twig' with { 
+        class : 'cherry', 
+        icon : 'camera',
+        label : 'photographies', 
+        count : photos|length, 
+        color : 'light'
+    }
+    %}
     
 </div>
 

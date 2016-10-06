@@ -12,4 +12,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class PostRepository extends EntityRepository
 {
+    public function getMostViewed(){
+        $qb = $this->createQueryBuilder('u');
+        $qb->select('u');
+        $qb->join('u.category', 'c', 'WITH', $qb->expr()->eq('u.category', 'c.id'));
+        $qb->addSelect('c');
+        $qb->orderBy('u.view', 'DESC');
+        $qb->setMaxResults( 3 );
+
+        return $qb->getQuery()->getArrayResult();
+    }
 }
+
+

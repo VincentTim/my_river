@@ -6,7 +6,7 @@
  * global vars
  */
  
- $path-imgs : '';
+ $path-imgs : '../images/';
  $path-fonts : '';
  
 @font-face {
@@ -92,6 +92,7 @@ $button-transistion-duration: 0.3s;     // The transition duration
 // Colors
 $c-white : #fff;
 $c-black : #000;
+$c-dark-grey: #252525;
 $c-orange: #F24C27;
 
 $c-light-grey: #e0e0e0;
