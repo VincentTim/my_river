@@ -1,9 +1,13 @@
-<article>
+<article class="collection">
+    {{ post.description|raw }}
     {% if post.files|length > 0  %}
         {% for image in post.files %}
             {% set path = '/upload/media/' ~image.name %}
-            <img src="{{ path | imagine_filter('item_detail') }}">
+            <a href="{{ path | imagine_filter('item_view') }}" rel="{{ post.title|seo }}" class="fancybox" title="{{ image.name }}">
+                <img src="{{ path | imagine_filter('my_thumb') }}">
+            </a>
+
         {% endfor %}
     {% endif %}
-    {{ post.description|raw }}
+
 </article>

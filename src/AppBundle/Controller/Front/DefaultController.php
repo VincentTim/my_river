@@ -51,20 +51,26 @@ class DefaultController extends Controller
         $iDcategory = $this->get('entity.management')->rep('Category')->findOneBy(array('name'=>$category));
         $post = $this->get('entity.management')->rep('Post')->findOneBy(array('category'=>$iDcategory->getId(), 'slug' => $title));
 
-        $tags = $this->get('entity.management')->rep('Tag')->getTagCount();
-        $cats = $this->get('entity.management')->rep('Category')->findAll();
+        if(null !== $post){
+            $tags = $this->get('entity.management')->rep('Tag')->getTagCount();
+            $cats = $this->get('entity.management')->rep('Category')->findAll();
 
-        $random = $this->randomPost($post->getId());
-        $most = $this->mostView();
-        $this->countUpdate($post);
-        
-        return $this->render('default/detail.html.twig', array(
-            'post' => $post,
-            'tags' => $tags,
-            'cats' => $cats,
-            'random' => $random,
-            'most' => $most
-        ));
+            $random = $this->randomPost($post->getId());
+            $most = $this->mostView();
+            $this->countUpdate($post);
+
+            return $this->render('default/detail.html.twig', array(
+                'post' => $post,
+                'tags' => $tags,
+                'cats' => $cats,
+                'random' => $random,
+                'most' => $most
+            ));
+        }
+
+        return $this->redirectToRoute('error_page', array(), 301);
+
+
     }
 
     /**
@@ -122,6 +128,20 @@ class DefaultController extends Controller
     public function mostView(){
         $most = $this->get('entity.management')->rep('Post')->getMostViewed();
         return $most;
+    }
+
+    /**
+     * @Route("/page-not-found", name="error_page")
+     */
+    public function errorPageAction(){
+        return $this->render('default/404.html.twig');
+    }
+
+    /**
+     * @Route("/*", name="error_contet")
+     */
+    public function errorContentAction(){
+        return $this->redirectToRoute('error_page', array(), 301);
     }
 
     

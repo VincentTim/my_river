@@ -14,7 +14,7 @@ var paths = require("./package.json").paths;
  * Copy images Tasks
  */
 gulp.task('copy', function () {
-    return gulp.src(paths.assets + 'images/*')
+    return gulp.src(paths.assets + 'images/**/*')
         .pipe(plumber())
         .pipe(require('gulp-copy')(paths.dist + '/images/', {prefix:5}));
 });
@@ -63,18 +63,18 @@ gulp.task('styles-admin', function () {
  * Generate png sprite
  */
 
-gulp.task('sprite', function () {
-
-  return gulp.src(paths.assets + 'images/sprite-icon/*.png')
-    .pipe(require('gulp.spritesmith')({
-        imgName: 'sprite-icon.png',
-        imgPath: '../images/sprite-icon.png',
-        cssName: '../styles/_sprite-icon.data.scss',
-        retinaSrcFilter : paths.assets + 'images/sprite-icon/*@2x.png',
-        retinaImgName: '../images/sprite@2x.png'
-      }))
-    .pipe(gulp.dest(paths.assets + 'images' ));
-});
+// gulp.task('sprite', function () {
+//
+//   return gulp.src(paths.assets + 'images/sprite-icon/*.png')
+//     .pipe(require('gulp.spritesmith')({
+//         imgName: 'sprite-icon.png',
+//         imgPath: '../images/sprite-icon.png',
+//         cssName: '../styles/_sprite-icon.data.scss',
+//         retinaSrcFilter : paths.assets + 'images/sprite-icon/*@2x.png',
+//         retinaImgName: '../images/sprite@2x.png'
+//       }))
+//     .pipe(gulp.dest(paths.assets + 'images' ));
+// });
 
 /**
  * scripts managment
@@ -178,7 +178,7 @@ gulp.task('default', function(callback){
     runSequence(
         'scripts',
         'scripts-admin',
-        'sprite',
+        // 'sprite',
         'styles',
         'styles-admin',
         'copy',

@@ -8,77 +8,10 @@
  
  $path-imgs : '../images/';
  $path-fonts : '';
- 
-@font-face {
-    font-family: 'pacificoregular';
-    src: url('../fonts/pacifico/Pacifico-webfont.eot');
-    src: url('../fonts/pacifico/Pacifico-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/pacifico/Pacifico-webfont.woff2') format('woff2'),
-         url('../fonts/pacifico/Pacifico-webfont.woff') format('woff'),
-         url('../fonts/pacifico/Pacifico-webfont.ttf') format('truetype'),
-         url('../fonts/pacifico/Pacifico-webfont.svg#pacificoregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
 @import 'https://fonts.googleapis.com/css?family=Lato:300,300i,400,700|Oswald:300,400,700';
-
-//@font-face {
-//  font-family: 'Lato Regular';
-//  font-style: normal;
-//  font-weight: 400;
-//  src: local('Lato Regular'),
-//       local('Lato-Regular'),
-//       url('../fonts/lato/lato-regular.woff2') format('woff2');
-//}
-//@font-face {
-//  font-family: 'Lato Bold';
-//  font-style: normal;
-//  font-weight: 700;
-//  src: local('Lato Bold'),
-//  local('Lato-Bold'),
-//  url('../fonts/lato/lato-bold.woff2') format('woff2');
-//}
-//@font-face {
-//  font-family: 'Lato Light';
-//  font-style: normal;
-//  font-weight: 300;
-//  src: local('Lato Light'),
-//  local('Lato-Light'),
-//  url('../fonts/lato/lato-light.woff2') format('woff2');
-//}
-//@font-face {
-//  font-family: 'Lato Light Italic';
-//  font-style: normal;
-//  font-weight: 300;
-//  src: local('Lato Light Italic'),
-//  local('Lato-LightItalic'),
-//  url('../fonts/lato/lato-light-italic.woff2') format('woff2');
-//}
-//@font-face {
-//  font-family: 'Oswald Regular';
-//  font-style: normal;
-//  font-weight: 400;
-//  src: local('Oswald Regular'),
-//  local('Oswald-Regular'),
-//  url(../fonts/oswald/pEobIV_lL25TKBpqVI_a2w.woff2) format('woff2');
-//}
-//@font-face {
-//  font-family: 'Oswald Bold';
-//  font-style: normal;
-//  font-weight: 700;
-//  src: local('Oswald Bold'),
-//  local('Oswald-Bold'),
-//  url('../fonts/oswald/oswald-bold.woff2') format('woff2');
-//}
-//@font-face {
-//  font-family: 'Oswald Light';
-//  font-style: normal;
-//  font-weight: 400;
-//  src: local('Oswald Light'),
-//  local('Oswald-Light'),
-//  url('../fonts/oswald/oswald-light.woff2') format('woff2');
-//}
+//@import 'https://fonts.googleapis.com/css?family=Fjord+One';
+@import 'https://fonts.googleapis.com/css?family=Merriweather:300,400,700';
 
 //Btn menu
 $button-width: 24px;                    // The width of the button area
@@ -119,9 +52,6 @@ $c-grey: #c9c9c9;
 $c-active-blue: #055a7f;
 $c-light-blue: #5396b2;
 
-
-
-
 //layout main width
 $main-nav-full : 300px;
 $main-nav-small : 80px;
@@ -160,7 +90,7 @@ $transition-function : cubic-bezier(0.165, 0.84, 0.44, 1);
 @import '_login.scss';
 @import '_progress-bar.scss';*/
 
-@import '_owl.scss';
+@import 'vendors/_fancybox.scss';
 @import '_styles.scss';
 
 
