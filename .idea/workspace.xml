@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1156878-0897-4eeb-ac67-9342416b56a9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/post.html.twig" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/assets/scripts/main.js" afterPath="$PROJECT_DIR$/app/Resources/assets/scripts/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/assets/scripts/modules/_fancybox.js" afterPath="$PROJECT_DIR$/app/Resources/assets/scripts/modules/_fancybox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/assets/styles/_hamburger.scss" afterPath="$PROJECT_DIR$/app/Resources/assets/styles/_hamburger.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/assets/styles/_styles.scss" afterPath="$PROJECT_DIR$/app/Resources/assets/styles/_styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/assets/styles/app.scss" afterPath="$PROJECT_DIR$/app/Resources/assets/styles/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/assets/styles/vendors/_fancybox.scss" afterPath="$PROJECT_DIR$/app/Resources/assets/styles/vendors/_fancybox.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/404.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/404.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/embed/detail/aside.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/embed/detail/aside.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/embed/detail/collection-content.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/embed/detail/collection-content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/embed/detail/item.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/embed/detail/item.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/embed/detail/post-content.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/embed/detail/post-content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/liip.yml" afterPath="$PROJECT_DIR$/app/config/liip.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Front/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Front/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/dist/scripts/admin-bundle.js" afterPath="$PROJECT_DIR$/web/dist/scripts/admin-bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/dist/scripts/bundle.js" afterPath="$PROJECT_DIR$/web/dist/scripts/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/dist/styles/app.css" afterPath="$PROJECT_DIR$/web/dist/styles/app.css" />
     </list>
     <ignored path="projectA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -101,8 +82,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+            <state relative-caret-position="272">
+              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -585,12 +566,12 @@
       <workItem from="1475587742857" duration="6669000" />
       <workItem from="1475658965302" duration="8351000" />
       <workItem from="1475756208407" duration="4549000" />
-      <workItem from="1475850553015" duration="7234000" />
+      <workItem from="1475850553015" duration="7420000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99639000" />
+    <option name="totallyTimeSpent" value="99825000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1029,8 +1010,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        <state relative-caret-position="272">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
           <folding />
         </state>
       </provider>

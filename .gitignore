@@ -13,3 +13,5 @@
 /node_modules/
 /.idea/
 /web/dist/
+/web/upload/
+/web/media/
