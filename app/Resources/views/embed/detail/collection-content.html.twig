@@ -1,0 +1,9 @@
+<article>
+    {% if post.files|length > 0  %}
+        {% for image in post.files %}
+            {% set path = '/upload/media/' ~image.name %}
+            <img src="{{ path | imagine_filter('item_detail') }}">
+        {% endfor %}
+    {% endif %}
+    {{ post.description|raw }}
+</article>
