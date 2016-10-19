@@ -1,9 +1,11 @@
 <article>
+    {{ post.description|raw }}
+
     {% if post.files|length > 0  %}
         {% for image in post.files %}
             {% set path = '/upload/media/' ~image.name %}
-            <img src="{{ path | imagine_filter('item_detail') }}">
+            <img class="col-xs-12 col-sm-12 col-md-6 col-lg-6" src="{{ path | imagine_filter('item_detail') }}">
         {% endfor %}
     {% endif %}
-    {{ post.description|raw }}
+
 </article>

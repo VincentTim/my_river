@@ -91,6 +91,13 @@ class Post
 
     /**
      *
+     * @ORM\ManyToMany(targetEntity="Collection", inversedBy="posts")
+     *
+     **/
+    private $collections;
+
+    /**
+     *
      * @ORM\OneToMany(targetEntity="File", mappedBy="post", cascade={"persist", "remove"})
      **/
     private $files;
@@ -369,5 +376,38 @@ class Post
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Add collections
+     *
+     * @param \AppBundle\Entity\Post $collections
+     * @return Post
+     */
+    public function addCollection(\AppBundle\Entity\Collection $collections)
+    {
+        $this->collections[] = $collections;
+
+        return $this;
+    }
+
+    /**
+     * Remove collections
+     *
+     * @param \AppBundle\Entity\Post $collections
+     */
+    public function removeCollection(\AppBundle\Entity\Collection $collections)
+    {
+        $this->collections->removeElement($collections);
+    }
+
+    /**
+     * Get collections
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCollections()
+    {
+        return $this->collections;
     }
 }

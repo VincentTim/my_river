@@ -34,6 +34,12 @@ class Tag
     **/
     private $posts;
 
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="Collection", inversedBy="coltags")
+     **/
+    private $collections;
+
 
 
     /**
@@ -108,5 +114,38 @@ class Tag
     public function getPosts()
     {
         return $this->posts;
+    }
+
+    /**
+     * Add collections
+     *
+     * @param \AppBundle\Entity\Collection $collections
+     * @return Tag
+     */
+    public function addCollection(\AppBundle\Entity\Collection $collections)
+    {
+        $this->collections[] = $collections;
+
+        return $this;
+    }
+
+    /**
+     * Remove collections
+     *
+     * @param \AppBundle\Entity\Collection $collections
+     */
+    public function removeCollection(\AppBundle\Entity\Collection $collections)
+    {
+        $this->collections->removeElement($collections);
+    }
+
+    /**
+     * Get collections
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCollections()
+    {
+        return $this->collections;
     }
 }

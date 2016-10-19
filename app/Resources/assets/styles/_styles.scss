@@ -37,9 +37,13 @@ section.detail {
 		img {
 			display:block;
 			margin:0 auto;
+			float:none;
 			/*width:100%;*/
 		}
 	}
+}
+.overlay-bg {
+	position:absolute;width:100%;min-height:200px; background:rgba(0,0,0,0.9);top:0;left:0
 }
 h1 {
 
@@ -178,17 +182,28 @@ p {
 	font-family: 'Merriweather', Georgia, "Times New Roman", Times, serif;
 }
 
-.fancybox {
-	float: left;
-	padding: 20px;
-	width: 25%;
-	height: calc(240px - (240px * 25)/100);
-	overflow: hidden;
-	border: 1px solid #454545;
-	margin: 10px;
+.collection {
+
+	.fancybox {
+		//float: left;
+		//margin: 10px 0 10px 10px;
+		//&:first-of-type {
+		//	margin:10px 0 10px 0;
+		//}
+		margin-bottom:10px;
+		img{
+			width:100%
+		}
+
+
+
+	}
 }
+
+
 
 
 @import '_nav.scss';
 @import '_hamburger.scss';
 @import '_grid.scss';
+@import '_mobile.scss';

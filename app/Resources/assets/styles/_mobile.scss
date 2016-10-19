@@ -1,0 +1,25 @@
+@media screen and (min-width: 320px) and (max-width: 400px) {
+  h2 {
+    font-size:30px;
+  }
+  h1 {
+    font-size:34px;
+  }
+  .overlay-image {
+    .info-wrapper {
+      padding:0;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .collection {
+    .fancybox {
+
+      img {
+        width:100%
+      }
+    }
+  }
+
+}

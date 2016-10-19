@@ -12,24 +12,11 @@
     overflow: hidden;
 
     a {
-      color:#454545;
-      text-transform:uppercase;
-    }
-
-    figure {
-      height:180px;
-      overflow:hidden;
+      color: #454545;
+      text-transform: uppercase;
     }
 
     .info-wrapper {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      background: #fff;
-      height: auto;
-      min-height: 55%;
-      width: 100%;
-      padding: 12%;
 
       .fa {
         font-size:14px;
@@ -44,7 +31,7 @@
       }
 
       .datas {
-        border-top: 1px solid rgba(0,0,0,0.065);
+        //border-top: 1px solid rgba(0,0,0,0.065);
         width: 100%;
         display: block;
         margin: 15px 0 0px;
@@ -54,6 +41,40 @@
         left: 0;
       }
 
+
+    }
+
+
+
+  }
+
+}
+
+.blog {
+
+}
+
+.default {
+
+  .content-wrapper {
+    figure {
+      height:180px;
+      overflow:hidden;
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+    .info-wrapper {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: #fff;
+      height: auto;
+      min-height: 55%;
+      width: 100%;
+      padding: 12%;
+
       .categories a {
         padding:2px 0 2px 0;
         border-bottom:1px solid #454545;
@@ -62,13 +83,8 @@
       }
 
     }
-
   }
 
-  figure img {
-    height: auto;
-    width: 100%;
-  }
 
 }
 

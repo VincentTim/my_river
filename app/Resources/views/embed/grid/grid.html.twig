@@ -1,69 +1,29 @@
-<div class="container">
 
 
-
-    {% for item in posts %}
-        {#<div class="item col-lg-6 blog">#}
-            {#<div class="content-wrapper">#}
-                {#<figure class="images">#}
-                    {#{% if item.files|length > 0 and item.files|length < 2 %}#}
-                        {#{% for image in item.files %}#}
-                            {#{% set path = '/upload/media/' ~image.name %}#}
-                            {#<img src="{{ path | imagine_filter('item_detail') }}" alt="{{ item.title }}">#}
-                        {#{% endfor %}#}
-                    {#{% endif %}#}
-                    {#<div class="overlay-image visible">#}
-                        {#<div class="info-wrapper">#}
-                                {#<div class="info">#}
-                                    {#<p>HI, I'M JAMES. I LOVE TO TRAVEL AND SHARE MY ADVENTURES.</p>#}
-                                    {#<header><h2>The Blog</h2></header>#}
-                                {#</div>#}
-                        {#</div>#}
-                    {#</div>#}
-                {#</figure>#}
-            {#</div>#}
-        {#</div>#}
-    <div class="item col-lg-3 default">
+    <div class="item col-lg-6 col-md-6 col-xs-12 blog">
+        <a href="{{ path('view_collection') }}">
         <div class="content-wrapper">
-            <a href="{{ path('post_detail', {category: item.category.name|seo, year:'2016', month:'09', day: '29', title: item.title|seo }) }}" title="">
-                <figure class="images">
-                    {% if item.files|length > 0  %}
-                        {% for image in item.files %}
-                            {% if loop.index == 1 %}
-                                {% set path = '/upload/media/' ~image.name %}
-                                <img src="{{ path | imagine_filter('item_detail') }}" alt="{{ item.title }}">
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
-                </figure>
-            </a>
-            <div class="info-wrapper">
-                <p class="small categories">
-                    {% if item.category is not null %}
-                        <a href="{{ path('view_category', { category: item.category.name|seo }) }}" rel="category tag">{{ item.category.name }}</a>
-                    {% else %}
-                        <a href="" rel="category tag">Non class&eacute;</a>
-                    {% endif %}
-                </p>
-                <a href="{{ path('post_detail', {category: item.category.name|seo, year:'2016', month:'09', day: '29', title: item.title|seo }) }}" title="">
-                    <h4 class="header">{{ item.title }}</h4>
-                </a>
-                <div class="datas">
-                    <i class="fa fa-calendar" aria-hidden="true"></i>{{ item.modification|localizeddate('medium', 'none') }}
-                    {% if item.view is not null %}<i class="fa fa-eye" aria-hidden="true"></i>{{ item.view }}{% endif %}
+            <figure class="images">
+
+                {% set path = '/dist/images/bg_col.jpg' %}
+                <img src="{{ asset(path)  }}" alt="collection" height="385">
+
+                <div class="overlay-image visible">
+                    <div class="info-wrapper">
+                        <div class="info">
+                            <header><h2>Collections</h2></header>
+                        </div>
+                        <div class="datas">
+                            <i class="fa fa-hashtag" aria-hidden="true"></i>{{ collection[0][1] }}
+                            <i class="fa fa-calendar" aria-hidden="true"></i>{{ collection[0].modification|localizeddate('medium', 'none') }}
+                        </div>
+                    </div>
                 </div>
+            </figure>
+        </div>
+            </a>
+    </div>
+
+    {% include ':embed/grid:loop.html.twig' %}
 
 
-            </div>
-        </div></div>
-    {% endfor %}
-
-    <style type="text/css">
-
-
-    </style>
-
-
-
-
-</div>

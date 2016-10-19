@@ -1,10 +1,10 @@
 {% if action == 'update' %}
-    <form name="{{ form.vars.name }}" id="{{ form.vars.id }}" action="{{ path('dashboard_illustration_contribute', {id: form.vars.value.id }) }}" method="post" enctype="multipart/form-data">
+    <form name="{{ form.vars.name }}" id="{{ form.vars.id }}" action="{{ path('dashboard_collection_contribute', {id: form.vars.value.id }) }}" method="post" enctype="multipart/form-data">
 {% else %}
-    <form name="{{ form.vars.name }}" id="{{ form.vars.id }}" action="{{ path('dashboard_illustration_contribute') }}" method="post" enctype="multipart/form-data">
+    <form name="{{ form.vars.name }}" id="{{ form.vars.id }}" action="{{ path('dashboard_collection_contribute') }}" method="post" enctype="multipart/form-data">
 {% endif %}
 	{{form_row(form.title)}}
-	{{form_row(form.excerpt)}}
+
 	{{form_row(form.description)}}
         {{form_errors(form)}}
 {{form_end(form)}}

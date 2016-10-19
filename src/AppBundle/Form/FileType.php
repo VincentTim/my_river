@@ -15,7 +15,7 @@ class FileType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
+            ->add('legend')
             ->add('file', 'file', array(
                     'label' => false,
                     'data_class' => 'Symfony\Component\HttpFoundation\File\UploadedFile',

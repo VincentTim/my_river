@@ -1,13 +1,15 @@
-<section class="col-lg-9 detail">
+<section class="col-lg-9 col-md-9 col-sm-9 col-xs-12 detail">
     <header>
-        <span class="category">{{ post.category.name }}</span>
+        {% if post.category.id is defined %}
+            <span class="category">{{ post.category.name }}</span>
+        {% endif %}
         <h1>{{ post.title }}</h1>
         <span class="published">{{ post.modification|localizeddate('long', 'none') }}</span>
     </header>
-    {% if post.category.id == '1' or post.category.id == '2' %}
+    {% if post.category.id is defined and (post.category.id == '1' or post.category.id == '2') %}
         {% include ':embed/detail:post-content.html.twig' with { post:post } %}
     {% endif %}
-    {% if post.category.id == '3' %}
+    {% if post.category.id is not defined %}
         {% include ':embed/detail:collection-content.html.twig' with { post:post } %}
     {% endif %}
     </section>

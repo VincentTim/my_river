@@ -23,8 +23,10 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $posts = $this->get('entity.management')->rep('Post')->findAll();
+        $collections = $this->get('entity.management')->rep('Collection')->getCollectionInfo();
         return $this->render('default/index.html.twig', array(
-            'posts' => $posts
+            'posts' => $posts,
+            'collection' => $collections
         ));
     }
     
@@ -37,7 +39,7 @@ class DefaultController extends Controller
             array('category'=>$iDcategory->getId()), 
             array('modification' => 'DESC')
         ); 
-        return $this->render('default/index.html.twig', array(
+        return $this->render(':default:page.html.twig', array(
             'posts' => $posts
         ));
         
@@ -55,9 +57,9 @@ class DefaultController extends Controller
             $tags = $this->get('entity.management')->rep('Tag')->getTagCount();
             $cats = $this->get('entity.management')->rep('Category')->findAll();
 
-            $random = $this->randomPost($post->getId());
-            $most = $this->mostView();
-            $this->countUpdate($post);
+            $random = $this->get('items.functions')->randomPost($post->getId());
+            $most = $this->get('items.functions')->mostView();
+            $this->get('items.functions')->countUpdate($post);
 
             return $this->render('default/detail.html.twig', array(
                 'post' => $post,
@@ -71,63 +73,6 @@ class DefaultController extends Controller
         return $this->redirectToRoute('error_page', array(), 301);
 
 
-    }
-
-    /**
-     * @param $post
-     */
-    public function countUpdate($post){
-          
-        $request = new Request();
-        
-        $dispatcher = new EventDispatcher();
-        $subscriber = new PostListener();
-        $dispatcher->addSubscriber($subscriber);
-        
-        $event = new PostEvent($post, $request);
-        $dispatcher->dispatch(AppBundleEvents::UPDATE_POST_VIEW_COUNT_EVENT, $event);
-
-        if (null === $response = $event->getResponse()) {
-
-            $this->get('entity.management')->update($post);            
-
-        }
-        
-    }
-
-    /**
-     * @param $id
-     * @return mixed
-     */
-    public function randomPost($id){
-        $posts = $this->get('entity.management')->rep('Post')->findAll();
-
-        $arrayPost =  array();
-
-        foreach($posts as $index => $post){
-            $arrayPost[$index] = $post->getId();
-        }
-
-        $index = array_rand ( $arrayPost );
-
-        $interval = $arrayPost[$index];
-
-        if($interval == $id){
-            $index == end($arrayPost);
-            $random = $this->get('entity.management')->rep('Post')->find(prev($arrayPost));
-        } else {
-            $random = $this->get('entity.management')->rep('Post')->find($arrayPost[$index]);
-        }
-
-        return $random;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function mostView(){
-        $most = $this->get('entity.management')->rep('Post')->getMostViewed();
-        return $most;
     }
 
     /**

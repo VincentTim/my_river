@@ -10,7 +10,8 @@ module.exports = function(context){
 
 	function homeBackground(){
 
-		$('.login').backstretch("images/bg-breme.jpg");
+		$('.panorama').backstretch("dist/images/bg_col.jpg");
+		$('.panorama').prepend('<div class="overlay-bg"></div>');
 
 	}
 	

@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class CollectionRepository extends EntityRepository
 {
+    public function getCollectionInfo(){
+        $qb = $this->createQueryBuilder('u');
+        $qb->select($qb->expr()->count('u.title'), 'u.modification');
+        $qb->orderBy('u.modification', 'DESC');
+
+
+
+        return $qb->getQuery()->getArrayResult();
+    }
 }

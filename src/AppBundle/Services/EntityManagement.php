@@ -3,9 +3,7 @@ namespace AppBundle\Services;
 
 use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use FOS\UserBundle\Model\UserManagerInterface;
 
-use AppBundle\Entity\Bulle;
 
 class EntityManagement extends Controller
 {

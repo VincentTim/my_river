@@ -9,9 +9,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Doctrine\ORM\EntityRepository;
 
-use AppBundle\Form\TagType;
 
-class PostType extends AbstractType
+class CollectionType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -21,16 +20,8 @@ class PostType extends AbstractType
     {
         $builder
             ->add('title', 'text')
-            ->add('category', EntityType::class, array(
-                'class' => 'AppBundle:Category',
-                'property' => 'name',
-                'query_builder' => function (EntityRepository $er) {
-                    return $er->createQueryBuilder('u')
-                        ->orderBy('u.name', 'ASC');
-                }))
-            ->add('excerpt')
             ->add('description', 'textarea', array('attr' => array('class' => 'tinymce'), 'required' => false))
-            ->add('tags', 'collection', array(
+            ->add('coltags', 'collection', array(
                     'entry_type'   => new TagType(),
                     'allow_add'    => true,
                     'options' => array(
@@ -38,15 +29,15 @@ class PostType extends AbstractType
                     )
                 )
             )
-            ->add('files', 'collection', array(
-                    'entry_type'   => new FileType(),
-                    'allow_add'    => true,
-                    'options' => array(
-                        'label' => false,
-                        'required' => $options['file']
-                    )
-                )
-            )//entity
+            ->add('posts', EntityType::class, array(
+                'class' => 'AppBundle:Post',
+                'property' => 'title',
+                'multiple' => true,
+                'expanded' => true,
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('u')
+                        ->orderBy('u.title', 'ASC');
+                }))
             ->add('save', 'submit', array('attr'=>array('class'=>'btn-warning')))
         ;
     }
@@ -57,8 +48,7 @@ class PostType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Post',
-            'file' => true
+            'data_class' => 'AppBundle\Entity\Collection'
         ));
     }
 }

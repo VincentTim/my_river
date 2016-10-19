@@ -15,7 +15,7 @@ use AppBundle\EventListener\PostListener;
 
 use AppBundle\Event\PostEvent;
 
-class CollectionController extends Controller
+class PostCollectionController extends Controller
 {
     /**
     * @Route("/collections", name="view_collection")
@@ -47,9 +47,7 @@ class CollectionController extends Controller
 
                 $random = $this->get('items.functions')->randomPost(null);
                 $most = $this->get('items.functions')->mostView();
-                //$this->get('items.functions')->countUpdate($post);
-                //var_dump($post->getEntityName());
-                //exit;
+                $this->get('items.functions')->countUpdate($post);
 
                 return $this->render('default/detail.html.twig', array(
                     'post' => $post,

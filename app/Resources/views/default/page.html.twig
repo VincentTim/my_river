@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% include 'embed/grid/grid.html.twig' %}
+    {% if app.request.attributes.get('_route') == 'view_category' %}
+        {% include ':embed/grid:loop.html.twig' %}
+    {% endif %}
+    {% if app.request.attributes.get('_route') == 'view_collection' %}
+        {% include ':embed/grid:loop-collection.html.twig' %}
+    {% endif %}
 {% endblock %}

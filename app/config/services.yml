@@ -25,6 +25,11 @@ services:
         arguments: [~ , "@doctrine.orm.entity_manager"]
         tags:
          - { name: entity.management }
+    items.functions:
+        class: AppBundle\Services\ItemsFunctions
+        arguments: ["@entity.management"]
+        tags:
+          - { name: items.functions }
     post.event.subscriber:
             class: AppBundle\EventListener\PostListener
             tags:

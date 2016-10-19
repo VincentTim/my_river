@@ -9,7 +9,7 @@
             {% include 'embed/form/post-form.html.twig' %}
             {{ tinymce_init() }}
         {% endif %}
-        {% if app.request.attributes.get('_route') == 'dashboard_illustration' %}
+        {% if app.request.attributes.get('_route') == 'dashboard_illustration' or app.request.attributes.get('_route') == 'dashboard_photo' %}
             {% if liste|length > 0 %}
             <ul class="list-group">
                 {% for item in liste %}

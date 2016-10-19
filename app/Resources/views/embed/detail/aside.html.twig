@@ -1,4 +1,4 @@
-<aside id="detail-aside" class="col-lg-3">
+<aside id="detail-aside" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
     {#<div class="part-aside">
         <h4>à propos</h4>
 
@@ -10,6 +10,7 @@
                 {% for cat in cats %}
                     <li><a href="{{ path('view_category', { category: cat.name|seo }) }}">{{ cat.name }}</a> </li>
                 {% endfor %}
+                <li><a href="{{ path('view_collection') }}">Collection</a> </li>
             </ul>
         {% endif %}
     </div>
@@ -29,8 +30,10 @@
             {% endfor %}
         </ul>
     </div>
+    {% if random is not null %}
     <div class="part-aside">
         <h4>à voir</h4>
+
         {% if random.files|length > 0  %}
             {% for image in random.files %}
                 {% if loop.index == 1 %}
@@ -49,6 +52,7 @@
             {% endfor %}
         {% endif %}
     </div>
+    {% endif %}
     <div class="part-aside">
         {% if tags|length > 0 %}
             <h4>Tags</h4>

@@ -5,6 +5,7 @@ namespace AppBundle\EventListener;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use AppBundle\AppBundleEvents;
 use AppBundle\Event\PostEvent;
+use AppBundle\Event\CollectionEvent;
 
 class PostListener implements EventSubscriberInterface
 {
@@ -17,7 +18,9 @@ class PostListener implements EventSubscriberInterface
         // Liste des évènements écoutés et méthodes à appeler
         return array(
             AppBundleEvents::ADD_POST_EVENT => 'contribute',
-            AppBundleEvents::UPDATE_POST_VIEW_COUNT_EVENT => 'countUpdate'
+            AppBundleEvents::UPDATE_POST_VIEW_COUNT_EVENT => 'countUpdate',
+            AppBundleEvents::ADD_COLLECTION_EVENT => 'contribute_collection',
+            AppBundleEvents::UPDATE_COLLECTION_VIEW_COUNT_EVENT => 'collectionCountUpdate',
         );
     }
     
@@ -200,8 +203,57 @@ class PostListener implements EventSubscriberInterface
     public function countUpdate(PostEvent $event)
     {
         $post = $event->getPost();
-        $count = $post->getView();
+        $this->updateView($post);
+    }
+
+    public function collectionCountUpdate(CollectionEvent $event)
+    {
+        $post = $event->getCollection();
+        $this->updateView($post);
+    }
+
+    public function updateView($post){
         $newCount = $post->getView() + 1;
         $post->setView($newCount);
+    }
+
+    public function contribute_collection(CollectionEvent $event)
+    {
+
+        //les fonctions appelées ici sont celles décrites dans la classe postevent
+        $collection = $event->getCollection();
+        $id = $collection->getId();
+
+        if(count($collection->getColtags()) > 0){
+            foreach($collection->getColtags() as $tag){
+                $tag->addCollection($collection);
+                $collection->addColtag($tag);
+            }
+        }
+
+        //On ajoute les fichiers
+        if(count($collection->getPosts()) > 0){
+            foreach($collection->getPosts() as $post){
+                $collection->addPost($post);
+                $post->addCollection($collection);
+            }
+        }
+
+        if($collection->getId() != null){
+            $collection->setModification(new \DateTime());
+        }
+        else {
+            $collection->setCreation(new \DateTime());
+            $collection->setModification(new \DateTime());
+        }
+
+        if(null === $id){
+            $collection->setView('0');
+        }
+
+        $collection->setSlug($this->seoRewrite($collection->getTitle()));
+
+
+
     }
 }

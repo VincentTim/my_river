@@ -32,6 +32,13 @@ class File
     /**
      * @var string
      *
+     * @ORM\Column(name="legend", type="string", length=255)
+     */
+    private $legend;
+
+    /**
+     * @var string
+     *
      * @Assert\File()
      */
     private $file;
@@ -165,5 +172,28 @@ class File
     public function getPost()
     {
         return $this->post;
+    }
+
+    /**
+     * Set legend
+     *
+     * @param string $legend
+     * @return File
+     */
+    public function setLegend($legend)
+    {
+        $this->legend = $legend;
+
+        return $this;
+    }
+
+    /**
+     * Get legend
+     *
+     * @return string 
+     */
+    public function getLegend()
+    {
+        return $this->legend;
     }
 }

@@ -6,10 +6,19 @@
 			
 	        <li>
                 
-                <a href="#" class="dropdown-btn"><span class="glyphicon glyphicon-picture"></span>Illustrations</a>
+                <a href="#" class="dropdown-btn"><span class="glyphicon glyphicon-picture"></span>Articles</a>
                 <ul class="drop-menu">
-                    <li><a href="{{ path('dashboard_illustration')}}"><span class="glyphicon glyphicon-th-list"></span>Liste</a></li>
+                    <li><a href="{{ path('dashboard_illustration')}}"><span class="glyphicon glyphicon-picture"></span>Illustrations</a></li>
+                    <li><a href="{{ path('dashboard_photo')}}"><span class="glyphicon glyphicon-camera"></span>Photographies</a></li>
                     <li><a href="{{ path('dashboard_illustration_add')}}"><span class="glyphicon glyphicon-plus"></span>Ajouter</a></li>
+                </ul>
+            </li>
+            <li>
+
+                <a href="#" class="dropdown-btn"><span class="glyphicon glyphicon-book"></span>Collections</a>
+                <ul class="drop-menu">
+                    <li><a href="{{ path('dashboard_collection')}}"><span class="glyphicon glyphicon-th-list"></span>Liste</a></li>
+                    <li><a href="{{ path('dashboard_collection_add')}}"><span class="glyphicon glyphicon-plus"></span>Ajouter</a></li>
                 </ul>
             </li>
             <!--<li>

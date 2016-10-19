@@ -70,13 +70,18 @@ module.exports = function(context){
 		}
 	}
 
+	function panorama(){
+		$('.panorama').css('height', $(window).height());
+		$('.overlay-bg').css('height', $(window).height());
+	}
+
 	function init(){
          
         initDatePicker();
         deleteImageContrib();
 		showMenu();
 		menuBtn();
-		//initFancyBox();
+		panorama();
         
 	}
 

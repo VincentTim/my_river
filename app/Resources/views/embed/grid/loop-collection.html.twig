@@ -1,0 +1,44 @@
+{% for item in posts %}
+
+    <div class="item col-lg-3 default">
+        <div class="content-wrapper">
+            <a href="{{ path('collection_detail', {
+                year: item.modification|date('Y'),
+                month:item.modification|date('m'),
+                day: item.modification|date('d'),
+                title: item.title|seo }) }}" title="">
+                <figure class="images">
+                    {% if item.posts|length > 0 %}
+                        {% for content in item.posts %}
+                            {% if content.files|length > 0  %}
+                                {% for image in content.files %}
+                                    {% if loop.index == 1 %}
+                                        {% set path = '/upload/media/' ~image.name %}
+                                        <img src="{{ path | imagine_filter('item_detail') }}" alt="{{ item.title }}">
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                </figure>
+            </a>
+
+            <div class="info-wrapper">
+                <a href="{{ path('collection_detail', {
+                    year: item.modification|date('Y'),
+                    month:item.modification|date('m'),
+                    day: item.modification|date('d'),
+                    title: item.title|seo }) }}" title="">
+                    <h4 class="header">{{ item.title }}</h4>
+                </a>
+                <div class="datas">
+                <i class="fa fa-calendar" aria-hidden="true"></i>{{ item.modification|localizeddate('medium', 'none') }}
+                {% if item.view is not null %}<i class="fa fa-eye" aria-hidden="true"></i>{{ item.view }}{% endif %}
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+{% endfor %}
