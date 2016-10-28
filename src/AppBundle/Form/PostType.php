@@ -32,7 +32,7 @@ class PostType extends AbstractType
                 'label'=>'Lieu',
                 'class' => 'AppBundle:Place',
                 'property' => 'compound',
-                'multiple'=>true,
+                'multiple'=>false,
                 'expanded'=>true,
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('u')

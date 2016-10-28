@@ -170,7 +170,7 @@ class PostListener implements EventSubscriberInterface
         
         $datas = $event->getRequest()->request->all();
         
-        if($datas['post']['sites'] != ""){
+        if(isset($datas['post']['sites'])){
             foreach($datas['post']['sites'] as $places){
                 
                 $site = $places['site'];
