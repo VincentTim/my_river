@@ -13,10 +13,13 @@ module.exports = function(context){
         
         if(bloc == 'tags'){ label = 'Ajouter un mot clé'; }
         if(bloc == 'files'){ label = 'Ajouter une image'; }
+        if(bloc == 'sites'){ label = 'Ajouter un lieu'; }
 
         // setup an "add a tag" link
         var $addTagLink = $('<a href="#" class="btn btn-info add_'+bloc+'_link">'+label+'</a>');
         var $newLinkLi = $('<div></div>').append($addTagLink);
+        
+        var $removeTagLink = $('<a href="#" class="btn btn-info remove_'+bloc+'_link">Supprimer</a>');
         
         // Get the ul that holds the collection of tags
         $collectionHolder = $('#post_'+bloc);
@@ -26,15 +29,26 @@ module.exports = function(context){
 
         // count the current form inputs we have (e.g. 2), use that as the new
         // index when inserting a new item (e.g. 2)
-        $collectionHolder.data('index', $collectionHolder.find(':input').length);
+        var index = $collectionHolder.data('index', $collectionHolder.find(':input').length);
 
         $addTagLink.on('click', function(e) {
             // prevent the link from creating a "#" on the URL
             e.preventDefault();
-
+            $newLinkLi.append($removeTagLink);    
             // add a new tag form (see next code block)
             addTagForm($collectionHolder, $newLinkLi);
+            
+            var index  = $collectionHolder.data('index') - 1;
+               
+            $removeTagLink.click(function(ev){
+                ev.preventDefault();
+                $("#post_"+bloc+"_"+index).remove()
+            })
+            
         });
+        
+        
+        
     };
     
     function addTagForm($collectionHolder, $newLinkLi) {
@@ -54,12 +68,14 @@ module.exports = function(context){
         // Display the form in the page in an li, before the "Add a tag" link li
         var $newFormLi = $('<div></div>').append(newForm);
         $newLinkLi.before($newFormLi);
+        
     }
 	
 
 	function init(){
         addTagCollection('tags');
         addTagCollection('files');
+        addTagCollection('sites');
 	}
 
 	return {

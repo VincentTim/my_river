@@ -118,6 +118,8 @@ class DashboardController extends Controller
         $dispatcher = new EventDispatcher();
         $subscriber = new PostListener();
         $dispatcher->addSubscriber($subscriber);
+        
+        $datas = $request->request->all();
 
         if($id != null){
 
@@ -137,6 +139,8 @@ class DashboardController extends Controller
             if($form->isValid()){
 
                 $post = $form->getData();
+                
+                
 
                 $event = new PostEvent($post, $request);
                 $dispatcher->dispatch(AppBundleEvents::ADD_POST_EVENT, $event);

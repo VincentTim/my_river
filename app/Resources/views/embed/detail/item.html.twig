@@ -4,7 +4,12 @@
             <span class="category">{{ post.category.name }}</span>
         {% endif %}
         <h1>{{ post.title }}</h1>
-        <span class="published">{{ post.modification|localizeddate('long', 'none') }}</span>
+        <span class="published">
+            {{ post.modification|localizeddate('long', 'none') }}
+            {% if post.places is defined and post.places is not empty %}
+             - {{ post.places[0].site }}, {{ post.places[0].country }}
+            {% endif %}
+        </span>
     </header>
     {% if post.category.id is defined and (post.category.id == '1' or post.category.id == '2') %}
         {% include ':embed/detail:post-content.html.twig' with { post:post } %}
@@ -13,5 +18,5 @@
         {% include ':embed/detail:collection-content.html.twig' with { post:post } %}
     {% endif %}
     </section>
-
+{% dump(post.places[0]) %}
 {% include ':embed/detail:aside.html.twig' with { tags:tags, random:random, cats: cats} %}

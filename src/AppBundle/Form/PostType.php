@@ -9,8 +9,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Doctrine\ORM\EntityRepository;
 
-use AppBundle\Form\TagType;
-
 class PostType extends AbstractType
 {
     /**
@@ -20,8 +18,9 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', 'text')
+            ->add('title', 'text', array('label'=>'Titre', 'required'=>true))
             ->add('category', EntityType::class, array(
+                'label'=>'Catégorie de publication',
                 'class' => 'AppBundle:Category',
                 'property' => 'name',
                 'query_builder' => function (EntityRepository $er) {
@@ -29,15 +28,38 @@ class PostType extends AbstractType
                         ->orderBy('u.name', 'ASC');
                 }))
             ->add('description', 'textarea', array('attr' => array('class' => 'tinymce'), 'required' => false))
+            ->add('places', EntityType::class, array(
+                'label'=>'Lieu',
+                'class' => 'AppBundle:Place',
+                'property' => 'compound',
+                'multiple'=>true,
+                'expanded'=>true,
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('u')
+                        ->orderBy('u.site', 'ASC');
+                },
+                  'required'=>false)
+            )
+            ->add('sites', 'collection', array(
+                    'entry_type'   => new PlaceType(),
+                    'allow_add'    => true,
+                    'allow_delete' => true,
+                    'options' => array(
+                        'label' => false,
+                        'required' => $options['file']
+                    ),
+                'mapped'=>false
+                ))
             ->add('files', 'collection', array(
                     'entry_type'   => new FileType(),
                     'allow_add'    => true,
+                    'allow_delete' => true,
                     'options' => array(
                         'label' => false,
                         'required' => $options['file']
                     )
                 )
-            )//entity
+            )
             ->add('publish', 'checkbox', array(
                 'label' => 'Cocher la case pour une publication immédiate',
                 'required' => false))

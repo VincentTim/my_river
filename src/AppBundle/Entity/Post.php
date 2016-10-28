@@ -94,6 +94,13 @@ class Post
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="posts")
      **/
     private $category;
+    
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="Place", mappedBy="posts", cascade={"persist", "remove"})
+     *
+     **/
+    private $places;
 
 
     /**
@@ -366,5 +373,38 @@ class Post
     public function getPublish()
     {
         return $this->publish;
+    }
+
+    /**
+     * Add places
+     *
+     * @param \AppBundle\Entity\Place $places
+     * @return Post
+     */
+    public function addPlace(\AppBundle\Entity\Place $places)
+    {
+        $this->places[] = $places;
+
+        return $this;
+    }
+
+    /**
+     * Remove places
+     *
+     * @param \AppBundle\Entity\Place $places
+     */
+    public function removePlace(\AppBundle\Entity\Place $places)
+    {
+        $this->places->removeElement($places);
+    }
+
+    /**
+     * Get places
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPlaces()
+    {
+        return $this->places;
     }
 }

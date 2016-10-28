@@ -7,6 +7,8 @@ use AppBundle\AppBundleEvents;
 use AppBundle\Event\PostEvent;
 use AppBundle\Event\CollectionEvent;
 
+use AppBundle\Entity\Place;
+
 class PostListener implements EventSubscriberInterface
 {
     public function __construct()
@@ -166,6 +168,23 @@ class PostListener implements EventSubscriberInterface
         $post = $event->getPost();
         $id = $post->getId();
         
+        $datas = $event->getRequest()->request->all();
+        
+        if($datas['post']['sites'] != ""){
+            foreach($datas['post']['sites'] as $places){
+                
+                $site = $places['site'];
+                $country = $places['country'];
+                
+                $place = new Place();
+                $place->setSite($site);
+                $place->setCountry($country);
+                
+                $place->addPost($post);
+                $post->addPlace($place);
+            }
+        }
+        
         if($post->getDescription() != "")
         {
             $str = $post->getDescription();
@@ -194,6 +213,8 @@ class PostListener implements EventSubscriberInterface
         }
         
         $post->setSlug($this->seoRewrite($post->getTitle()));
+        
+        
 
 
 
