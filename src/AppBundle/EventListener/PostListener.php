@@ -166,12 +166,11 @@ class PostListener implements EventSubscriberInterface
         $post = $event->getPost();
         $id = $post->getId();
         
-
-        if(count($post->getTags()) > 0){
-            foreach($post->getTags() as $tag){
-                $tag->addPost($post);
-                $post->addTag($tag);
-            }
+        if($post->getDescription() != "")
+        {
+            $str = $post->getDescription();
+            $post->setDescription($this->hashTag($str));
+            
         }
 
         //On ajoute les fichiers
@@ -255,5 +254,12 @@ class PostListener implements EventSubscriberInterface
 
 
 
+    }
+    
+    public function hashTag($str){
+	   $regex = "/#+([a-zA-Z0-9_]+)/";
+	   $str = preg_replace($regex, '<a href="#">$0</a>', $str);
+        //hashtag.php?tag=$1
+	   return($str);
     }
 }

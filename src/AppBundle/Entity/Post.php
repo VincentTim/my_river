@@ -60,34 +60,21 @@ class Post
     /**
      * @var string
      * @Assert\NotBlank()
-     * @Assert\Length(
-     *      min = 2,
-     *      max = 150,
-     *      minMessage = "The title must be at least {{ limit }} characters long",
-     *      maxMessage = "The title cannot be longer than {{ limit }} characters"
-     * )
-     * @ORM\Column(name="excerpt", type="string", length=255, nullable=true)
-     */
-    private $excerpt;
-
-    /**
-     * @var string
-     * @Assert\NotBlank()
      * @ORM\Column(name="description", type="text")
      */
     private $description;
 
     /**
-     * @var string
+     * @var integer
      * @ORM\Column(name="view", type="integer", nullable=true, options={"default"=0})
      */
     private $view;
-
+    
     /**
-     *
-     * @ORM\ManyToMany(targetEntity="Tag", mappedBy="posts", cascade={"persist", "remove"})
-     **/
-    private $tags;
+     * @var boolean
+     * @ORM\Column(name="publish", type="boolean", nullable=false, options={"default"=0})
+     */
+    private $publish;
 
     /**
      *
@@ -189,29 +176,6 @@ class Post
     }
 
     /**
-     * Set excerpt
-     *
-     * @param string $excerpt
-     * @return Post
-     */
-    public function setExcerpt($excerpt)
-    {
-        $this->excerpt = $excerpt;
-
-        return $this;
-    }
-
-    /**
-     * Get excerpt
-     *
-     * @return string 
-     */
-    public function getExcerpt()
-    {
-        return $this->excerpt;
-    }
-
-    /**
      * Set description
      *
      * @param string $description
@@ -239,41 +203,7 @@ class Post
      */
     public function __construct()
     {
-        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
         $this->files = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add tags
-     *
-     * @param \AppBundle\Entity\Tag $tags
-     * @return Post
-     */
-    public function addTag(\AppBundle\Entity\Tag $tags)
-    {
-        $this->tags[] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Remove tags
-     *
-     * @param \AppBundle\Entity\Tag $tags
-     */
-    public function removeTag(\AppBundle\Entity\Tag $tags)
-    {
-        $this->tags->removeElement($tags);
-    }
-
-    /**
-     * Get tags
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getTags()
-    {
-        return $this->tags;
     }
 
     /**
@@ -413,5 +343,28 @@ class Post
 
     public function getEntityName(){
         return null;
+    }
+
+    /**
+     * Set publish
+     *
+     * @param integer $publish
+     * @return Post
+     */
+    public function setPublish($publish)
+    {
+        $this->publish = $publish;
+
+        return $this;
+    }
+
+    /**
+     * Get publish
+     *
+     * @return integer 
+     */
+    public function getPublish()
+    {
+        return $this->publish;
     }
 }

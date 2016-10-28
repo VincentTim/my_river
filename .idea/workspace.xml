@@ -1,216 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1156878-0897-4eeb-ac67-9342416b56a9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/avatar_holder.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/fake-adv.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/login-background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-activity-discussion-circle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-activity-discussion-circle@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-activity-document-circle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-activity-document-circle@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-activity-event-circle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-activity-event-circle@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-activity-resume.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-activity-resume@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-add-user-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-add-user-white@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-add-users-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-add-users-white@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-agenda.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-agenda@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-left-small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-left-small@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-left@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-right-small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-right-small@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-right@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-slide-black-left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-slide-black-left@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-slide-black-right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-slide-black-right@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-slide-left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-slide-left@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-slide-right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-arrow-slide-right@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-calendar-small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-calendar-small@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-calendar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-calendar@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-checkbox-blue-on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-checkbox-blue-on@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-checkbox-blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-checkbox-blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-checkbox-on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-checkbox-on@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-checkbox.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-checkbox@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-close-green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-close-green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-close-grey.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-close-grey@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-dialog-blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-dialog-blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-download-blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-download-blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-emploi-doc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-emploi-doc@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-emploi-link.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-emploi-link@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-event-video.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-event-video@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-eye-blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-eye-blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-eye-green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-eye-green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-file-video.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-file-video@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-filetype-archive.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-filetype-archive@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-filetype-image.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-filetype-image@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-filetype-video.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-filetype-video@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-list-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-list-white@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-mail.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-mail@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-minus-circle-blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-minus-circle-blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-my-activity-resume.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-my-activity-resume@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-account-on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-account-on@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-account.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-account@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-admin-on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-admin-on@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-admin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-admin@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-agenda-on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-agenda-on@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-agenda.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-agenda@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-directory-on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-directory-on@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-directory.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-directory@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-discusion-on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-discusion-on@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-discusion.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-discusion@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-doc-on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-doc-on@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-doc.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-doc@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-feedback-on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-feedback-on@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-feedback.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-feedback@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-job-on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-job-on@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-job.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-job@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-press-on.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-press-on@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-press.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-press@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-search.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-nav-search@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-phone.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-phone@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-plus-blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-plus-blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-plus-circle-blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-plus-circle-blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-plus-green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-plus-green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-poi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-poi@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-press-resume.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-press-resume@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-search-green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-search-green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-search-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-search-white@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-sidebar-title.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-sidebar-title@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-status-private.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-status-private@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-status-public.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-status-public@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-trash-blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-trash-blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-trash-green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-trash-green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-upload-file.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-upload-file@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-validate-green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-validate-green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-admin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-admin@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-directory.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-directory@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-discussion.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-discussion@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-document.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-document@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-emploi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-emploi@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-feedback.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-feedback@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-profile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-view-profile@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-warning-white-circle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-warning-white-circle@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-wheel-blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-wheel-blue@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-wheel-green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite-icon/icon-wheel-green@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/assets/images/sprite@2x.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/assets/scripts/modules/_backstretch.js" afterPath="$PROJECT_DIR$/app/Resources/assets/scripts/modules/_backstretch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/assets/scripts/modules/_default.js" afterPath="$PROJECT_DIR$/app/Resources/assets/scripts/modules/_default.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/assets/scripts/modules/_fancybox.js" afterPath="$PROJECT_DIR$/app/Resources/assets/scripts/modules/_fancybox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/assets/styles/_grid.scss" afterPath="$PROJECT_DIR$/app/Resources/assets/styles/_grid.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/assets/styles/_hamburger.scss" afterPath="$PROJECT_DIR$/app/Resources/assets/styles/_hamburger.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/assets/styles/_mobile.scss" afterPath="$PROJECT_DIR$/app/Resources/assets/styles/_mobile.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/assets/styles/_styles.scss" afterPath="$PROJECT_DIR$/app/Resources/assets/styles/_styles.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/admin/collection.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/admin/collection.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/admin/post.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/admin/post.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/page.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/page.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/embed/detail/aside.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/embed/detail/aside.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/embed/detail/collection-content.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/embed/detail/collection-content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/embed/detail/item.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/embed/detail/item.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/embed/detail/post-content.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/embed/detail/post-content.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/embed/form/collection-form.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/embed/form/collection-form.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/embed/grid/grid.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/embed/grid/grid.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/embed/grid/loop-collection.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/embed/grid/loop-collection.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/embed/grid/loop.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/embed/grid/loop.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/embed/nav/dashboard-nav.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/embed/nav/dashboard-nav.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/AppBundleEvents.php" afterPath="$PROJECT_DIR$/src/AppBundle/AppBundleEvents.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Admin/DashboardController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Admin/DashboardController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Front/CommentController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Front/CommentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Front/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Front/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Front/PostCollectionController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Front/PostCollectionController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Collection.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Collection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/File.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/File.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Post.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Tag.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Tag.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Event/CollectionEvent.php" afterPath="$PROJECT_DIR$/src/AppBundle/Event/CollectionEvent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/EventListener/PostListener.php" afterPath="$PROJECT_DIR$/src/AppBundle/EventListener/PostListener.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/CollectionType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/CollectionType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/FileType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/FileType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/CollectionRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/CollectionRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Services/EntityManagement.php" afterPath="$PROJECT_DIR$/src/AppBundle/Services/EntityManagement.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Services/ItemsFunctions.php" afterPath="$PROJECT_DIR$/src/AppBundle/Services/ItemsFunctions.php" />
-    </list>
+    <list default="true" id="a1156878-0897-4eeb-ac67-9342416b56a9" name="Default" comment="" />
     <ignored path="projectA.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -920,16 +711,16 @@
       <workItem from="1476823721841" duration="809000" />
       <workItem from="1476873112397" duration="6848000" />
       <workItem from="1476904413098" duration="57000" />
-      <workItem from="1476905553158" duration="111000" />
+      <workItem from="1476905553158" duration="282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144862000" />
+    <option name="totallyTimeSpent" value="145033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1918" height="1038" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13932702" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />

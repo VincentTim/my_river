@@ -29,26 +29,10 @@ class Tag
     private $name;
 
     /**
-    *
-    * @ORM\ManyToMany(targetEntity="Post", inversedBy="tags")
-    **/
-    private $posts;
-
-    /**
      *
      * @ORM\ManyToMany(targetEntity="Collection", inversedBy="coltags")
      **/
     private $collections;
-
-
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Get id
@@ -84,39 +68,6 @@ class Tag
     }
 
     /**
-     * Add posts
-     *
-     * @param \AppBundle\Entity\Post $posts
-     * @return Tag
-     */
-    public function addPost(\AppBundle\Entity\Post $posts)
-    {
-        $this->posts[] = $posts;
-
-        return $this;
-    }
-
-    /**
-     * Remove posts
-     *
-     * @param \AppBundle\Entity\Post $posts
-     */
-    public function removePost(\AppBundle\Entity\Post $posts)
-    {
-        $this->posts->removeElement($posts);
-    }
-
-    /**
-     * Get posts
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getPosts()
-    {
-        return $this->posts;
-    }
-
-    /**
      * Add collections
      *
      * @param \AppBundle\Entity\Collection $collections
@@ -148,4 +99,12 @@ class Tag
     {
         return $this->collections;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->collections = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
 }

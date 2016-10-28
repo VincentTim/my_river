@@ -117,7 +117,7 @@ class Collection
      */
     public function __construct()
     {
-        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->coltags = new \Doctrine\Common\Collections\ArrayCollection();
         $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -270,39 +270,6 @@ class Collection
     }
 
     /**
-     * Add tags
-     *
-     * @param \AppBundle\Entity\Tag $tags
-     * @return Collection
-     */
-    public function addTag(\AppBundle\Entity\Tag $tags)
-    {
-        $this->tags[] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * Remove tags
-     *
-     * @param \AppBundle\Entity\Tag $tags
-     */
-    public function removeTag(\AppBundle\Entity\Tag $tags)
-    {
-        $this->tags->removeElement($tags);
-    }
-
-    /**
-     * Get tags
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getTags()
-    {
-        return $this->tags;
-    }
-
-    /**
      * Add coltags
      *
      * @param \AppBundle\Entity\Tag $coltags
@@ -333,5 +300,9 @@ class Collection
     public function getColtags()
     {
         return $this->coltags;
+    }
+
+    public function getEntityName(){
+        return 'collection';
     }
 }

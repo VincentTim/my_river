@@ -28,16 +28,7 @@ class PostType extends AbstractType
                     return $er->createQueryBuilder('u')
                         ->orderBy('u.name', 'ASC');
                 }))
-            ->add('excerpt')
             ->add('description', 'textarea', array('attr' => array('class' => 'tinymce'), 'required' => false))
-            ->add('tags', 'collection', array(
-                    'entry_type'   => new TagType(),
-                    'allow_add'    => true,
-                    'options' => array(
-                        'label' => false
-                    )
-                )
-            )
             ->add('files', 'collection', array(
                     'entry_type'   => new FileType(),
                     'allow_add'    => true,
@@ -47,6 +38,9 @@ class PostType extends AbstractType
                     )
                 )
             )//entity
+            ->add('publish', 'checkbox', array(
+                'label' => 'Cocher la case pour une publication immédiate',
+                'required' => false))
             ->add('save', 'submit', array('attr'=>array('class'=>'btn-warning')))
         ;
     }

@@ -123,13 +123,6 @@ class DashboardController extends Controller
 
             $post = $this->get('entity.management')->rep('Post')->find($id);
 
-            //Pour la mise à jour des tags, on supprime d'abord ceux enregistrés et liés
-            foreach($post->getTags() as $tag){
-                $tag->removePost($post);
-                $post->removeTag($tag);
-                $this->get('entity.management')->delete($tag);
-            }
-
         }
         else {
             $post = new Post();
