@@ -180,8 +180,7 @@ class PostListener implements EventSubscriberInterface
                 $place->setSite($site);
                 $place->setCountry($country);
                 
-                $place->addPost($post);
-                $post->addPlace($place);
+                $post->setPlace($place);
             }
         }
         

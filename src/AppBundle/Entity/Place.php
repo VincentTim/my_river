@@ -37,10 +37,21 @@ class Place
     
     /**
      *
-     * @ORM\ManyToMany(targetEntity="Post", inversedBy="places")
+     * @ORM\OneToMany(targetEntity="Post", mappedBy="place")
      **/
     private $posts;
-
+    
+    public function getCompound(){
+        return $this->site.' - '.$this->country;
+    }
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -97,13 +108,6 @@ class Place
     {
         return $this->country;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Add posts
@@ -136,9 +140,5 @@ class Place
     public function getPosts()
     {
         return $this->posts;
-    }
-    
-    public function getCompound(){
-        return $this->site.' - '.$this->country;
     }
 }

@@ -28,7 +28,7 @@ class PostType extends AbstractType
                         ->orderBy('u.name', 'ASC');
                 }))
             ->add('description', 'textarea', array('attr' => array('class' => 'tinymce'), 'required' => false))
-            ->add('places', EntityType::class, array(
+            ->add('place', EntityType::class, array(
                 'label'=>'Lieu',
                 'class' => 'AppBundle:Place',
                 'property' => 'compound',
@@ -38,15 +38,14 @@ class PostType extends AbstractType
                     return $er->createQueryBuilder('u')
                         ->orderBy('u.site', 'ASC');
                 },
-                  'required'=>false)
+                  'required'=>true)
             )
             ->add('sites', 'collection', array(
                     'entry_type'   => new PlaceType(),
                     'allow_add'    => true,
                     'allow_delete' => true,
                     'options' => array(
-                        'label' => false,
-                        'required' => $options['file']
+                        'label' => false
                     ),
                 'mapped'=>false
                 ))

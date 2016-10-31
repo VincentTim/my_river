@@ -97,11 +97,21 @@ class Post
     
     /**
      *
-     * @ORM\ManyToMany(targetEntity="Place", mappedBy="posts", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="Place", inversedBy="posts", cascade={"persist", "remove"})
      *
      **/
-    private $places;
+    private $place;
 
+
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->collections = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->files = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -134,6 +144,29 @@ class Post
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Post
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**
@@ -206,11 +239,82 @@ class Post
     }
 
     /**
-     * Constructor
+     * Set view
+     *
+     * @param integer $view
+     * @return Post
      */
-    public function __construct()
+    public function setView($view)
     {
-        $this->files = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->view = $view;
+
+        return $this;
+    }
+
+    /**
+     * Get view
+     *
+     * @return integer 
+     */
+    public function getView()
+    {
+        return $this->view;
+    }
+
+    /**
+     * Set publish
+     *
+     * @param boolean $publish
+     * @return Post
+     */
+    public function setPublish($publish)
+    {
+        $this->publish = $publish;
+
+        return $this;
+    }
+
+    /**
+     * Get publish
+     *
+     * @return boolean 
+     */
+    public function getPublish()
+    {
+        return $this->publish;
+    }
+
+    /**
+     * Add collections
+     *
+     * @param \AppBundle\Entity\Collection $collections
+     * @return Post
+     */
+    public function addCollection(\AppBundle\Entity\Collection $collections)
+    {
+        $this->collections[] = $collections;
+
+        return $this;
+    }
+
+    /**
+     * Remove collections
+     *
+     * @param \AppBundle\Entity\Collection $collections
+     */
+    public function removeCollection(\AppBundle\Entity\Collection $collections)
+    {
+        $this->collections->removeElement($collections);
+    }
+
+    /**
+     * Get collections
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCollections()
+    {
+        return $this->collections;
     }
 
     /**
@@ -270,141 +374,25 @@ class Post
     }
 
     /**
-     * Set view
+     * Set place
      *
-     * @param string $view
+     * @param \AppBundle\Entity\Place $place
      * @return Post
      */
-    public function setView($view)
+    public function setPlace(\AppBundle\Entity\Place $place = null)
     {
-        $this->view = $view;
+        $this->place = $place;
 
         return $this;
     }
 
     /**
-     * Get view
+     * Get place
      *
-     * @return string 
+     * @return \AppBundle\Entity\Place 
      */
-    public function getView()
+    public function getPlace()
     {
-        return $this->view;
-    }
-
-    /**
-     * Set slug
-     *
-     * @param string $slug
-     * @return Post
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string 
-     */
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
-    /**
-     * Add collections
-     *
-     * @param \AppBundle\Entity\Post $collections
-     * @return Post
-     */
-    public function addCollection(\AppBundle\Entity\Collection $collections)
-    {
-        $this->collections[] = $collections;
-
-        return $this;
-    }
-
-    /**
-     * Remove collections
-     *
-     * @param \AppBundle\Entity\Post $collections
-     */
-    public function removeCollection(\AppBundle\Entity\Collection $collections)
-    {
-        $this->collections->removeElement($collections);
-    }
-
-    /**
-     * Get collections
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getCollections()
-    {
-        return $this->collections;
-    }
-
-    public function getEntityName(){
-        return null;
-    }
-
-    /**
-     * Set publish
-     *
-     * @param integer $publish
-     * @return Post
-     */
-    public function setPublish($publish)
-    {
-        $this->publish = $publish;
-
-        return $this;
-    }
-
-    /**
-     * Get publish
-     *
-     * @return integer 
-     */
-    public function getPublish()
-    {
-        return $this->publish;
-    }
-
-    /**
-     * Add places
-     *
-     * @param \AppBundle\Entity\Place $places
-     * @return Post
-     */
-    public function addPlace(\AppBundle\Entity\Place $places)
-    {
-        $this->places[] = $places;
-
-        return $this;
-    }
-
-    /**
-     * Remove places
-     *
-     * @param \AppBundle\Entity\Place $places
-     */
-    public function removePlace(\AppBundle\Entity\Place $places)
-    {
-        $this->places->removeElement($places);
-    }
-
-    /**
-     * Get places
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getPlaces()
-    {
-        return $this->places;
+        return $this->place;
     }
 }
