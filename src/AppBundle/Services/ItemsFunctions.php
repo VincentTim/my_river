@@ -63,7 +63,7 @@ class ItemsFunctions extends Controller
      */
     public function randomPost($id){
 
-        $posts = $this->entityManager->rep('Post')->findAll();
+        $posts = $this->entityManager->rep('Post')->findBy(array('publish'=>true));
 
         $arrayPost =  array();
 

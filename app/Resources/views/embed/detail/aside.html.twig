@@ -30,10 +30,9 @@
             {% endfor %}
         </ul>
     </div>
-    {% if random is not null %}
+    {% if random is not null and random.id != post.id %}
     <div class="part-aside">
         <h4>à voir</h4>
-
         {% if random.files|length > 0  %}
             {% for image in random.files %}
                 {% if loop.index == 1 %}

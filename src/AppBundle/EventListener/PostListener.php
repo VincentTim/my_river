@@ -8,6 +8,7 @@ use AppBundle\Event\PostEvent;
 use AppBundle\Event\CollectionEvent;
 
 use AppBundle\Entity\Place;
+use AppBundle\Entity\Tag;
 
 class PostListener implements EventSubscriberInterface
 {
@@ -186,8 +187,7 @@ class PostListener implements EventSubscriberInterface
         
         if($post->getDescription() != "")
         {
-            $str = $post->getDescription();
-            $post->setDescription($this->hashTag($str));
+            $post->setDescription($this->hashTag($post));
             
         }
 
@@ -213,10 +213,6 @@ class PostListener implements EventSubscriberInterface
         
         $post->setSlug($this->seoRewrite($post->getTitle()));
         
-        
-
-
-
     }
     
     public function countUpdate(PostEvent $event)
@@ -276,10 +272,21 @@ class PostListener implements EventSubscriberInterface
 
     }
     
-    public function hashTag($str){
-	   $regex = "/#+([a-zA-Z0-9_]+)/";
+    public function hashTag($post){
+       $str = $post->getDescription();
+       preg_match_all("/(#\w+)/", $str, $matches, PREG_OFFSET_CAPTURE);
+       
+       foreach($matches[0] as $tag){
+           $term = new Tag();
+           $term->setName(str_replace('#', "", $tag[0]));
+           $post->addTag($term);
+           $term->addPost($post);
+           
+       }
+        
+       $regex = "/#+([a-zA-Z0-9_]+)/";
 	   $str = preg_replace($regex, '<a href="#">$0</a>', $str);
-        //hashtag.php?tag=$1
+        
 	   return($str);
     }
 }

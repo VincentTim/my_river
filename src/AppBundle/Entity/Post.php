@@ -101,6 +101,12 @@ class Post
      *
      **/
     private $place;
+    
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="Tag", mappedBy="posts", cascade={"persist", "remove"})
+     **/
+    private $tags;
 
 
     
@@ -111,6 +117,7 @@ class Post
     {
         $this->collections = new \Doctrine\Common\Collections\ArrayCollection();
         $this->files = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -394,5 +401,42 @@ class Post
     public function getPlace()
     {
         return $this->place;
+    }
+    
+    public function getEntityName(){
+        return null;
+    }
+
+    /**
+     * Add tags
+     *
+     * @param \AppBundle\Entity\Tag $tags
+     * @return Post
+     */
+    public function addTag(\AppBundle\Entity\Tag $tags)
+    {
+        $this->tags[] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * Remove tags
+     *
+     * @param \AppBundle\Entity\Tag $tags
+     */
+    public function removeTag(\AppBundle\Entity\Tag $tags)
+    {
+        $this->tags->removeElement($tags);
+    }
+
+    /**
+     * Get tags
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTags()
+    {
+        return $this->tags;
     }
 }

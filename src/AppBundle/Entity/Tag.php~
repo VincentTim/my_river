@@ -34,6 +34,12 @@ class Tag
      **/
     private $collections;
     
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="Post", inversedBy="tags")
+     **/
+    private $posts;
+    
     
 
     /**

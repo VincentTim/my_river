@@ -22,7 +22,7 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $posts = $this->get('entity.management')->rep('Post')->findBy(array('publish'=>true));
+        $posts = $this->get('entity.management')->rep('Post')->findBy(array('publish'=>true), array('modification' =>'DESC'));
         $collections = $this->get('entity.management')->rep('Collection')->getCollectionInfo();
         return $this->render('default/index.html.twig', array(
             'posts' => $posts,

@@ -7,7 +7,7 @@
         <span class="published">
             {{ post.modification|localizeddate('long', 'none') }}
             {% if post.places is defined and post.places is not empty %}
-             - {{ post.places[0].site }}, {{ post.places[0].country }}
+             - {{ post.place.site }}, {{ post.place.country }}
             {% endif %}
         </span>
     </header>
@@ -18,5 +18,4 @@
         {% include ':embed/detail:collection-content.html.twig' with { post:post } %}
     {% endif %}
     </section>
-{% dump(post.places[0]) %}
 {% include ':embed/detail:aside.html.twig' with { tags:tags, random:random, cats: cats} %}
