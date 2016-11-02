@@ -7,7 +7,8 @@
         '_collection',
         '_nav',
         '_default',
-		'_fancybox'
+		'_fancybox',
+        '_chart'
 	];
 
 	var modulesLoaded = [];
