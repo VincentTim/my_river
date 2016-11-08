@@ -198,6 +198,16 @@ class PostListener implements EventSubscriberInterface
                 $file->setPost($post);
             }
         }
+        
+        if(count($post->getTags()) > 0){
+            $arrayTags = array();
+            foreach($post->getTags() as $term){
+                $post->addTag($term);
+                $term->addPost($post); 
+                array_push($arrayTags, $term);
+            }  
+            $this->appendTag($post, $arrayTags);
+        }
 
         if($post->getId() != null){
             $post->setModification(new \DateTime());
@@ -288,5 +298,14 @@ class PostListener implements EventSubscriberInterface
 	   $str = preg_replace($regex, '<a href="#">$0</a>', $str);
         
 	   return($str);
+    }
+    
+    public function appendTag($post, $arrayTags){
+        $content = $post->getDescription();
+        foreach($arrayTags as $index=>$tag){
+            $content.' #'.$tag->getName();    
+        }
+        var_dump($content);exit;
+        $post->setDescription($content);
     }
 }

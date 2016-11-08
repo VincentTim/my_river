@@ -6,7 +6,7 @@ module.exports = function(context){
 
 	"use strict";
 
-	require('chart');
+	require('chart.js');
 
 	function doughtChart(){
         var ctx = document.getElementById("myChart");

@@ -40,6 +40,19 @@ class PostType extends AbstractType
                 },
                   'required'=>true)
             )
+            ->add('tags', EntityType::class, array(
+                'label'=>'Tags',
+                'class' => 'AppBundle:Tag',
+                'property' => 'name',
+                'multiple'=>true,
+                'expanded'=>true,
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('u')
+                        ->groupBy('u.name')
+                        ->orderBy('u.name', 'ASC');
+                },
+                  'required'=>false)
+            )
             ->add('sites', 'collection', array(
                     'entry_type'   => new PlaceType(),
                     'allow_add'    => true,
