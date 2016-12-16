@@ -10,7 +10,44 @@ a {
 	transition: all 0.2s ease 0s;
 }
 
+.social-bar {
+	width:40px;
+	padding:0px;
+	height:160px;
+	background:rgba($c-blue-dark,0.6);
+	position:fixed;
+	right:0;
+
+	ul {
+		margin: 0 0 0 -40px;
+		list-style: none;
+
+		li {
+			a.social-link {
+				display: block;
+				width: 40px;
+				height: 40px;
+				padding:10px;
+				text-align:center;
+				cursor: pointer;
+				color: white;
+				-webkit-transition: color $transition-duration; /* Safari */
+				transition: color $transition-duration;
+
+				&:hover {
+					color:#145874;
+				}
+
+				i {
+					font-size:20px
+				}
+			}
+		}
+	}
+}
+
 section.detail {
+
 	header {
 
 		text-align:center;

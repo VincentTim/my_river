@@ -17,5 +17,29 @@
     {% if post.category.id is not defined %}
         {% include ':embed/detail:collection-content.html.twig' with { post:post } %}
     {% endif %}
-    </section>
+</section>
 {% include ':embed/detail:aside.html.twig' with { tags:tags, random:random, cats: cats} %}
+<div class="social-bar">
+    <ul>
+        <li>
+            <a class="social-link">
+                <i class="fa  fa-facebook" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li>
+            <a class="social-link">
+                <i class="fa  fa-instagram" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li>
+            <a class="social-link">
+                <i class="fa  fa-twitter" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li>
+            <a class="social-link">
+                <i class="fa  fa-pinterest" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
