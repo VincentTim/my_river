@@ -22,6 +22,20 @@ class PostRepository extends EntityRepository
 
         return $qb->getQuery()->getArrayResult();
     }
+
+    public function getBy($tag){
+
+        $qb = $this->createQueryBuilder('u');
+        $qb->join('u.category', 'c', 'WITH', $qb->expr()->eq('u.category', 'c.id'));
+        $qb->addSelect('c');
+        $qb->join('u.files', 'f');
+        $qb->addSelect('f');
+        $qb->where($qb->expr()->like('u.description', ':param'));
+        $qb->andWhere($qb->expr()->eq('f.post', 'u.id'));
+        $qb->setParameter('param', '%#'.$tag.'%');
+
+        return $qb->getQuery()->getArrayResult();
+    }
 }
 
 
