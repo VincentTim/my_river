@@ -21,9 +21,6 @@
             {% for random in most %}
                 <li><a href="{{ path('post_detail', {
                         category: random.category.name|seo,
-                        year: random.modification|date('Y'),
-                        month:random.modification|date('m'),
-                        day: random.modification|date('d'),
                         title: random.title|seo
                     })
                     }}" title="">{{ random.title }}</a> </li>
@@ -39,9 +36,6 @@
                     {% set path = '/upload/media/' ~image.name %}
                     <a href="{{ path('post_detail', {
                         category: random.category.name|seo,
-                        year: random.modification|date('Y'),
-                        month:random.modification|date('m'),
-                        day: random.modification|date('d'),
                         title: random.title|seo
                     })
                     }}" title="">
