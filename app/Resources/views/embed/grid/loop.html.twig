@@ -1,11 +1,9 @@
-{% dump(posts) %}
+
 {% for item in posts %}
 
     <div class="item col-xs-12 col-sm-6 col-md-3 col-lg-3 default">
         <div class="content-wrapper">
-            <a href="{{ path('post_detail', {category: item.category.name|seo, year: item.modification|date('Y'),
-                month:item.modification|date('m'),
-                day: item.modification|date('d'), title: item.title|seo }) }}" title="">
+            <a href="{{ path('post_detail', {category: item.category.name|seo, title: item.title|seo }) }}" title="">
                 <figure class="images">
                     {% if item.files|length > 0  %}
                         {% for image in item.files %}
@@ -25,10 +23,7 @@
                         <a href="" rel="category tag">Non class&eacute;</a>
                     {% endif %}
                 </p>
-                <a href="{{ path('post_detail', {category: item.category.name|seo,
-                    year: item.modification|date('Y'),
-                    month:item.modification|date('m'),
-                    day: item.modification|date('d'), title: item.title|seo }) }}" title="">
+                <a href="{{ path('post_detail', {category: item.category.name|seo, title: item.title|seo }) }}" title="">
                     <h4 class="header">{{ item.title }}</h4>
                 </a>
                 <div class="datas">

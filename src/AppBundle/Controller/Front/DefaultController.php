@@ -46,9 +46,9 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/post/{category}/{year}/{month}/{day}/{title}", name="post_detail")
+     * @Route("/post/{category}/{title}", name="post_detail")
      */
-    public function postDetailAction($category, $year, $month, $day, $title){
+    public function postDetailAction($category, $title){
         
         $iDcategory = $this->get('entity.management')->rep('Category')->findOneBy(array('name'=>$category));
         $post = $this->get('entity.management')->rep('Post')->findOneBy(array('category'=>$iDcategory->getId(), 'slug' => $title));

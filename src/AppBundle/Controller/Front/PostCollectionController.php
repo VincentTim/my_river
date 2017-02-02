@@ -34,9 +34,9 @@ class PostCollectionController extends Controller
     }
 
     /**
-    * @Route("/collection/{year}/{month}/{day}/{title}", name="collection_detail")
+    * @Route("/collection/{title}", name="collection_detail")
     */
-    public function collectionDetailAction($year, $month, $day, $title){
+    public function collectionDetailAction($title){
 
         $post = $this->get('entity.management')->rep('Collection')->findOneBy(array('slug' => $title));
 

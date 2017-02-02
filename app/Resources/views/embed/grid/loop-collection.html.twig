@@ -2,11 +2,7 @@
 
     <div class="item col-lg-3 default">
         <div class="content-wrapper">
-            <a href="{{ path('collection_detail', {
-                year: item.modification|date('Y'),
-                month:item.modification|date('m'),
-                day: item.modification|date('d'),
-                title: item.title|seo }) }}" title="">
+            <a href="{{ path('collection_detail', { title: item.title|seo }) }}" title="">
                 <figure class="images">
                     {% if item.posts|length > 0 %}
                         {% for content in item.posts %}
@@ -25,11 +21,7 @@
             </a>
 
             <div class="info-wrapper">
-                <a href="{{ path('collection_detail', {
-                    year: item.modification|date('Y'),
-                    month:item.modification|date('m'),
-                    day: item.modification|date('d'),
-                    title: item.title|seo }) }}" title="">
+                <a href="{{ path('collection_detail', { title: item.title|seo }) }}" title="">
                     <h4 class="header">{{ item.title }}</h4>
                 </a>
                 <div class="datas">
