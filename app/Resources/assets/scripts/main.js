@@ -3,12 +3,7 @@
 	"use strict";
 
 	var modules = [
-		'_backstretch',
-        '_collection',
-        '_nav',
-        '_default',
-		'_fancybox',
-        '_chart'
+		
 	];
 
 	var modulesLoaded = [];
@@ -49,8 +44,7 @@
 	        })
 	    }));
 	}
-	
+
 	init();
 
 })(window);
-
