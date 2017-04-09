@@ -1,0 +1,59 @@
+<aside id="detail-aside" class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+    {#<div class="part-aside">
+        <h4>à propos</h4>
+
+    </div>#}
+    <div class="part-aside">
+        {% if cats|length > 0 %}
+            <h4>Catégories</h4>
+            <ul id="cats-wrapper">
+                {% for cat in cats %}
+                    <li><a href="{{ path('view_category', { category: cat.name|seo }) }}">{{ cat.name }}</a> </li>
+                {% endfor %}
+                <li><a href="{{ path('view_collection') }}">Collection</a> </li>
+            </ul>
+        {% endif %}
+    </div>
+    <div class="part-aside">
+        <h4>Les plus vus</h4>
+        <ul id="cats-wrapper">
+
+            {% for random in most %}
+                <li><a href="{{ path('post_detail', {
+                        category: random.category.name|seo,
+                        title: random.title|seo
+                    })
+                    }}" title="">{{ random.title }}</a> </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% if random is not null and random.id != post.id %}
+    <div class="part-aside">
+        <h4>à voir</h4>
+        {% if random.files|length > 0  %}
+            {% for image in random.files %}
+                {% if loop.index == 1 %}
+                    {% set path = '/upload/media/' ~image.name %}
+                    <a href="{{ path('post_detail', {
+                        category: random.category.name|seo,
+                        title: random.title|seo
+                    })
+                    }}" title="">
+                        <img src="{{ path | imagine_filter('item_detail') }}">
+                    </a>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    {% endif %}
+    <div class="part-aside">
+        {% if tags|length > 0 %}
+            <h4>Tags</h4>
+            <ul id="tags-wrapper">
+                {% for tag in tags %}
+                    <li><a href="#">{{ tag.name }} {{ tag.1 }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</aside>

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% if app.request.attributes.get('_route') == 'view_collection' %}
+        {% include ':embed/grid:loop-collection.html.twig' %}
+        {% else  %}
+            {% include ':embed/grid:loop.html.twig' %}
+    {% endif %}
+{% endblock %}

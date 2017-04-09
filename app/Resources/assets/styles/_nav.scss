@@ -1,0 +1,41 @@
+aside#menu-wrapper {
+	padding:20px;
+	background:$c-dark-grey;
+    width: 200px;
+	position: fixed;
+	height: 100%;
+	background: rgb(18, 69, 69) none repeat scroll 0% 0%;
+	top: 0px;
+	left: -200px;
+	-webkit-transition: left $transition-duration; /* Safari */
+	transition: left $transition-duration;
+	&.open {
+		-webkit-transition: left $transition-duration; /* Safari */
+		transition: left $transition-duration;
+		left:0;
+	}
+	ul {
+		padding:0;
+		margin:0;
+        list-style:none;
+		li {
+			a {
+				font-size: 12px;
+				position: relative;
+				color: rgba(255,255,255,0.6);
+				padding: 9px 0;
+				display: block;
+				border-bottom: 1px solid rgba(255,255,255,0.1);
+				letter-spacing: 1px;
+				text-transform: uppercase;
+
+				&:hover {
+					color: rgba(255,255,255,0.5);
+					text-decoration:none;
+				}
+
+			}
+		}
+	}
+
+}

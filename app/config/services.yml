@@ -7,3 +7,30 @@ services:
 #    service_name:
 #        class: AppBundle\Directory\ClassName
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    app.dashboard_extension:
+        class: AppBundle\Twig\DashboardBlockExtension
+        public: false
+        tags:
+            - { name: dashboard.block }
+    twig.extension.text:
+           class: Twig_Extensions_Extension_Intl
+           tags:
+               - { name: twig.extension }
+    twig.extension:
+               class: AppBundle\Twig\TwigExtension
+               tags:
+                   - { name: twig.extension }
+    entity.management:
+        class: AppBundle\Services\EntityManagement
+        arguments: [~ , "@doctrine.orm.entity_manager"]
+        tags:
+         - { name: entity.management }
+    items.functions:
+        class: AppBundle\Services\ItemsFunctions
+        arguments: ["@entity.management"]
+        tags:
+          - { name: items.functions }
+    post.event.subscriber:
+            class: AppBundle\EventListener\PostListener
+            tags:
+             - { name:  post.event.subscriber }

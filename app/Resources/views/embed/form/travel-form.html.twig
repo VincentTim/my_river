@@ -1,0 +1,44 @@
+{% if action == 'update' %}
+    <form name="{{ form.vars.name }}" id="{{ form.vars.id }}" action="{{ path('dashboard_travel_contribute', {id: form.vars.value.id }) }}" method="post" enctype="multipart/form-data">
+{% else %}
+    <form name="{{ form.vars.name }}" id="{{ form.vars.id }}" action="{{ path('dashboard_travel_contribute') }}" method="post" enctype="multipart/form-data">
+{% endif %}
+	{{form_row(form.name)}}
+	{{form_row(form.period_from)}}
+	{{form_row(form.period_to)}}
+	{{form_row(form.summary)}}
+	{{form_row(form.description)}}
+	{{form_row(form.country)}}
+	<div class="form-tags">
+		{{ form_row(form.tags) }}
+		<div class="form-group">
+			<ul class="tags"></ul>
+		</div>
+	</div>
+    <div class="form-files">
+        
+		{{ form_row(form.files) }}
+        
+        {% if form.vars.value.files | length > 0 %}
+            <h2>Liste des images enregistrées</h2>
+            <ul class="list-group">
+                {% for item in form.vars.value.files %}
+                <li class="list-group-item">
+				<a href="{{ asset('upload/media/')}}{{ item.name }}" class="fancybox">
+					<img src="{{ ('upload/media/' ~ item.name) | imagine_filter('my_thumb') }}"/>
+				</a>
+                    <a href="#" class="delete-image" data-id="{{item.id}}">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        
+		<div class="form-group">
+			<ul class="files"></ul>
+		</div>
+	</div>
+{{form_end(form)}}
+    
+{{ tinymce_init() }}

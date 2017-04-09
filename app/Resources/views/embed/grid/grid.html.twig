@@ -1,0 +1,29 @@
+
+
+    <div class="item col-lg-6 col-md-6 col-xs-12 blog">
+        <a href="{{ path('view_collection') }}">
+        <div class="content-wrapper">
+            <figure class="images">
+
+                {% set path = '/dist/images/bg_col.jpg' %}
+                <img src="{{ asset(path)  }}" alt="collection" height="385">
+
+                <div class="overlay-image visible">
+                    <div class="info-wrapper">
+                        <div class="info">
+                            <header><h2>Collections</h2></header>
+                        </div>
+                        <div class="datas">
+                            <i class="fa fa-hashtag" aria-hidden="true"></i>{{ collection[0][1] }}
+                            <i class="fa fa-calendar" aria-hidden="true"></i>{{ collection[0].modification|localizeddate('medium', 'none') }}
+                        </div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+            </a>
+    </div>
+
+    {% include ':embed/grid:loop.html.twig' %}
+
+

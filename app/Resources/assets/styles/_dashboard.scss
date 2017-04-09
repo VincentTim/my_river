@@ -1,0 +1,280 @@
+ul {
+    list-style:none;
+}
+
+.row {
+    padding:15px 0 15px 0;
+}
+
+body {
+    background:$c-lighter-grey;
+}
+
+.avatar {
+                
+        img {
+            width:40px;
+            height:40px;
+            @include borderRadius(100%);
+            overflow:hidden;    
+            }
+    span {
+        color: white;
+text-transform: uppercase;
+padding-left: 10px;
+display: inline-block;
+    }
+        
+    }
+
+.list-group {
+    .action {
+        float: right;
+        margin: 0 5px 0 5px;
+    }
+}
+
+#dashboard-nav-wrapper {
+    min-width:225px;
+    height:100%;
+    position:fixed;
+    background:$c-blue-dark;
+    padding-top: 20px;
+        
+        #dashboard-nav {
+            margin-left: -15px;
+            width:calc(100% + 30px);
+            padding-top: 20px;
+            
+            ul {
+                margin:0 0 0 -40px;
+                
+                
+                li {
+                    a {
+                        display: block;
+                        height: 40px;
+                        width: 100%;
+                        color:$c-white;
+                        border-left: 3px solid $c-blue-dark;
+                        text-transform: uppercase;
+                        line-height: 2.8em;
+                        color: $c-light-blue;
+                        
+                        .glyphicon {
+                            padding-left: 15px;
+                            padding-right: 15px;
+                        }
+                        
+                        &:hover {
+                            padding-left:10px;
+                            text-decoration:none;
+                            transition: padding-left 0.1s linear;
+                            @include navLinkState(); 
+                        }
+                        &.active {
+                            @include navLinkState();    
+                        }
+                    }
+                    
+                    ul.drop-menu {
+                        display:none;
+                        li {
+                            a {
+                                padding-left:30px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            }
+}
+
+#dashboard-content-wrapper {
+    background:$c-lighter-grey;
+    float:right;
+    min-height:150px;
+    
+    .ariane-wrapper {
+        height:40px;
+        padding:10px;
+        
+        ul {
+            margin:0 0 0 -40px;
+            
+            li {
+                float:left;
+                margin-left:10px;
+                color:$c-grey;
+                
+                a {
+                    display:inline-block;
+                    
+                    &:after {
+                     content:'/';
+                     display:block;
+                     float:right;
+                     margin-left:10px;
+                        color:$c-grey;
+                    }
+                }
+            }
+        }
+    }
+    
+    header {
+        h1 {
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top:0;
+            margin-bottom:0;
+        }
+    }
+    
+}
+
+.dashboard--wrapper {
+    padding-left:0;
+    padding-right:0;
+    
+    .dashboard--block {
+    width: 100%;
+    height: 100px;
+    @include borderRadius(5px); 
+    color:white;
+    padding:25px 20px 20px 20px;
+    display:block;
+    
+    &:after {
+        content:'';
+        display:block;
+        clear:both;
+    }
+        
+        &.default {
+            background: #257a9f;
+            border: 1px solid #055a7f;
+            }
+        &.green {
+            background: $c-green-light;
+            border: 1px solid $c-green-darker;
+            }
+    &.cherry {
+        background: #eb547d;
+        border:1px solid #ce4468;
+    }
+    &.lime {
+        background: $c-yellow-lime;
+        border:1px solid $c-yellow-lime-dark;    
+    }
+    &.mint {
+            background: $c-green-mint;
+            border: 1px solid $c-green-mint-dark;
+            }
+    .glyphicon {
+            float: right;
+            font-size: 46px;
+        &.light {
+            color:white;
+        }
+        
+        &.dark {
+            color: #23527c;
+        }
+        
+    }
+    .label--wrapper {
+        float:left;
+        
+        &.light {
+            color:white;
+        }
+        
+        &.dark {
+            color: #23527c;
+        }
+        
+        span {
+            display:block;
+            
+            &.count {
+                font-size:24px;
+                font-weight:700;
+            }
+            &.block-label {
+                font-size:12px;
+                text-transform:uppercase;
+                font-weight:300;
+            }
+        }
+    }
+}
+
+.dashboard--message {
+    @include borderRadius(5px); 
+    border:1px solid #e0e0e0;
+    background:#f9f9f9;
+    width:100%;
+    min-height:100px;
+    
+    header {
+        height:48px;
+        border-bottom:1px solid $c-light-grey;
+        padding:7px 20px 0 20px;
+        
+        h2 {
+            padding:0;
+            margin:0;
+            font-size:14px;
+            text-transform:uppercase;
+            color:#333;
+            display:inline-block;
+        }
+        
+        form {
+            margin:0;
+            padding:0;
+        }
+        
+    }
+    
+    table {
+        
+        td {
+            
+            a.btn-action {
+                height:21px;
+                width:21px;
+                display:block;
+                float:left;
+                margin:0 7px 0 7px;
+                
+                .glyphicon {
+                    font-size: 1.5em;
+                }
+            }
+        
+        .label {
+            width:55px;
+            text-align:center;
+        }
+            
+            &.row-content {
+                 line-height:2.7em;
+                
+                .date {
+                    text-transform: uppercase;
+                    color: $c-light-grey;
+                }
+            }
+            
+        }
+    
+    }
+    
+    
+    
+}
+    
+}

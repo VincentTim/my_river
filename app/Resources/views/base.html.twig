@@ -2,12 +2,51 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+		<script type="text/javascript" src="{{ asset('dist/scripts/bundle.js') }}" ></script>
+		<link rel="stylesheet" type="text/css" href="{{ asset('dist/styles/app.css') }}"> 
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <aside id="menu-wrapper">
+            <ul>
+                <li>
+                    <a href="{{ path('homepage') }}">
+                        Accueil
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('view_category', { category: 'illustration'}) }}">
+                        Illustrations
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('view_category', { category: 'photographie'}) }}">
+                        Photographies
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('view_collection') }}">
+                        Collections
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        {#<div class="container-fluid panorama">#}
+
+        {#</div>#}
+        <div id="main-wrapper">
+            {% include 'embed/header.html.twig' %}
+
+            <div class="container">
+                {% block body %}{% endblock %}
+            </div>
+            {% block javascripts %}{% endblock %}
+        </div>
+        <footer></footer>
+        {#<canvas id="myChart" width="400" height="200"></canvas>#}
+
     </body>
 </html>

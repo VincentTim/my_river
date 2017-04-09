@@ -1,0 +1,308 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
+/**
+ * Collection
+ *
+ * @ORM\Table(name="collection")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CollectionRepository")
+ */
+class Collection
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+/**
+ * @Assert\Length(
+*      min = 2,
+*      max = 50,
+*      minMessage = "The title must be at least {{ limit }} characters long",
+*      maxMessage = "The title cannot be longer than {{ limit }} characters"
+* )
+* @ORM\Column(name="title", type="string", length=255, unique=true)
+*/
+    private $title;
+
+    /**
+     * @var string
+     * @ORM\Column(name="slug", type="string", length=255, unique=true)
+     */
+    private $slug;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="creation", type="datetime")
+     */
+    private $creation;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="modification", type="datetime")
+     */
+    private $modification;
+
+    /**
+     * @var string
+     * @Assert\NotBlank()
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
+     * @var string
+     * @ORM\Column(name="view", type="integer", nullable=true, options={"default"=0})
+     */
+    private $view;
+
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="Tag", mappedBy="collections", cascade={"persist", "remove"})
+     **/
+    private $coltags;
+
+    /**
+     *
+     * @ORM\ManyToMany(targetEntity="Post", mappedBy="collections")
+     **/
+    private $posts;
+
+
+
+    /**
+     * Add posts
+     *
+     * @param \AppBundle\Entity\Post $posts
+     * @return Collection
+     */
+    public function addPost(\AppBundle\Entity\Post $posts)
+    {
+        $this->posts[] = $posts;
+
+        return $this;
+    }
+
+    /**
+     * Remove posts
+     *
+     * @param \AppBundle\Entity\Post $posts
+     */
+    public function removePost(\AppBundle\Entity\Post $posts)
+    {
+        $this->posts->removeElement($posts);
+    }
+
+    /**
+     * Get posts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->coltags = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Collection
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Collection
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set creation
+     *
+     * @param \DateTime $creation
+     * @return Collection
+     */
+    public function setCreation($creation)
+    {
+        $this->creation = $creation;
+
+        return $this;
+    }
+
+    /**
+     * Get creation
+     *
+     * @return \DateTime 
+     */
+    public function getCreation()
+    {
+        return $this->creation;
+    }
+
+    /**
+     * Set modification
+     *
+     * @param \DateTime $modification
+     * @return Collection
+     */
+    public function setModification($modification)
+    {
+        $this->modification = $modification;
+
+        return $this;
+    }
+
+    /**
+     * Get modification
+     *
+     * @return \DateTime 
+     */
+    public function getModification()
+    {
+        return $this->modification;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Collection
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set view
+     *
+     * @param integer $view
+     * @return Collection
+     */
+    public function setView($view)
+    {
+        $this->view = $view;
+
+        return $this;
+    }
+
+    /**
+     * Get view
+     *
+     * @return integer 
+     */
+    public function getView()
+    {
+        return $this->view;
+    }
+
+    /**
+     * Add coltags
+     *
+     * @param \AppBundle\Entity\Tag $coltags
+     * @return Collection
+     */
+    public function addColtag(\AppBundle\Entity\Tag $coltags)
+    {
+        $this->coltags[] = $coltags;
+
+        return $this;
+    }
+
+    /**
+     * Remove coltags
+     *
+     * @param \AppBundle\Entity\Tag $coltags
+     */
+    public function removeColtag(\AppBundle\Entity\Tag $coltags)
+    {
+        $this->coltags->removeElement($coltags);
+    }
+
+    /**
+     * Get coltags
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getColtags()
+    {
+        return $this->coltags;
+    }
+
+    public function getEntityName(){
+        return 'collection';
+    }
+}

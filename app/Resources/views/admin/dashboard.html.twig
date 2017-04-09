@@ -1,0 +1,34 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block body %}
+<aside id="dashboard-nav-wrapper" class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+    <div class="avatar">
+        <img src="{{ 'upload/user/alysson_grayce.jpg' | imagine_filter('avatar_list') }}" />
+        <span>Alysson Grayce</span>
+    </div>
+    
+	{% include 'embed/nav/dashboard-nav.html.twig' %}
+	
+</aside>
+<div id="dashboard-content-wrapper" class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
+    <div class="ariane-wrapper">
+        <ul>
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li><a href="#">Administration</a></li>
+            <li>Accueil</li>
+        </ul>
+    </div>
+    <section class="dashboard-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <header>
+            <h1>Dashboard</h1>
+            <p>Welcome back Alysson</p>
+        </header>
+        <div class="dashboard--wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            
+            {% block dashboard_content %}
+            {% endblock %}
+        </div>
+    </section>
+</div>
+{% endblock %}
+
